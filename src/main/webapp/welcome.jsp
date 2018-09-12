@@ -3,13 +3,12 @@
 <head>
 <meta charset="utf-8">
 <title>welcome</title>
-  <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+  <script src="js/jquery.min.js"></script>
   <link  rel="stylesheet" href="/css/welcome.css">
+  <script src="/js/jquery.waypoints.min.js"></script>
+
 </head>
 <body >
-
-<script src="/js/jquery.waypoints.min.js"></script>
-
 <header class="site-header">
   <div class="wrapper">
     <h1 class="site-header__title">jquery Vertical Time Axis</h1>
