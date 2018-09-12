@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>welcome/title>
+<title>welcome</title>
 
 <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 
@@ -232,8 +232,8 @@ img {
 </style>
 
 </head>
-<body background="timg.jpg";
-	style="background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
+<body background="image/bg.jpg" ;
+      style="background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
 
 <script src="js/jquery.waypoints.min.js"></script>
 
