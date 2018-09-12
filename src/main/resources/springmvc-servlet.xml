@@ -12,6 +12,7 @@
 	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd">
 	<!-- 注解驱动 -->
 	<mvc:annotation-driven/>
+	<mvc:resources location="/image" mapping="/**"/>
     <!-- 自动扫描包 -->
 	<context:component-scan base-package="cap.*" />
 

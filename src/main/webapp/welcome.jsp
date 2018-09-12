@@ -7,7 +7,7 @@
 <script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
 
 <style>
-/*@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');*/
+@import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
 
 /* _variables.css */
 
@@ -20,9 +20,7 @@
 
 body {
 	font-family: 'Nunito', sans-serif;
-    background-image: url("timg.jpg");
-    background-size: cover;
-
+	
 }
 
 img {
@@ -196,7 +194,7 @@ img {
   margin: 0;
   padding: 8px 12px;
   font-size: 15px;
-  margin-bottom:10px;
+  margin-bottom: 10px;
   background-color: #65adb7;
   color: #fff;
   display: inline-block;
@@ -234,7 +232,8 @@ img {
 </style>
 
 </head>
-<body>
+<body background="timg.jpg";
+	style="background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
 
 <script src="js/jquery.waypoints.min.js"></script>
 
