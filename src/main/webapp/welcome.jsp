@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <title>welcome</title>
 
-<script src="http://www.jq22.com/jquery/jquery-1.10.2.js"></script>
+<script src="js/jquery.min.js"></script>
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Nunito:300,400,700');
