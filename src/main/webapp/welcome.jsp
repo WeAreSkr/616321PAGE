@@ -8,7 +8,7 @@
   <script src="/js/jquery.waypoints.min.js"></script>
 
 </head>
-<body >
+<body style="background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
 <header class="site-header">
   <div class="wrapper">
     <h1 class="site-header__title">jquery Vertical Time Axis</h1>
