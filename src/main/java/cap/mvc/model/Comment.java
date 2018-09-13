@@ -1,13 +1,13 @@
 package cap.mvc.model;
 
 public class Comment {
-    private Long commId; //id标识
+    private Long commId;
 
-    private Integer stuNmb; //谁发表的
+    private Integer stuNmb;
 
-    private Long pageId; // 哪张主页下的
+    private Long pageId;
 
-    private String msg; //信息
+    private String msg;
 
     public Long getCommId() {
         return commId;
@@ -39,15 +39,5 @@ public class Comment {
 
     public void setMsg(String msg) {
         this.msg = msg;
-    }
-
-    @Override
-    public String toString() {
-        return "Comment{" +
-                "commId=" + commId +
-                ", stuNmb=" + stuNmb +
-                ", pageId=" + pageId +
-                ", msg='" + msg + '\'' +
-                '}';
     }
 }

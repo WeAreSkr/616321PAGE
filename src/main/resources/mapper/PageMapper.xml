@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cap.mvc.dao.mapper.PageMapper" >
+  <resultMap id="BaseResultMap" type="cap.mvc.model.Page" >
+    <id column="PAGE_ID" property="pageId" jdbcType="BIGINT" />
+    <result column="MODEl" property="model" jdbcType="INTEGER" />
+    <result column="DSC" property="dsc" jdbcType="VARCHAR" />
+    <result column="BIRTHDAY" property="birthday" jdbcType="BIGINT" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    PAGE_ID, MODEl, DSC, BIRTHDAY
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
+    select 
+    <include refid="Base_Column_List" />
+    from page
+    where PAGE_ID = #{pageId,jdbcType=BIGINT}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long" >
+    delete from page
+    where PAGE_ID = #{pageId,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="cap.mvc.model.Page" >
+    insert into page (PAGE_ID, MODEl, DSC, 
+      BIRTHDAY)
+    values (#{pageId,jdbcType=BIGINT}, #{model,jdbcType=INTEGER}, #{dsc,jdbcType=VARCHAR}, 
+      #{birthday,jdbcType=BIGINT})
+  </insert>
+  <insert id="insertSelective" parameterType="cap.mvc.model.Page" >
+    insert into page
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="pageId != null" >
+        PAGE_ID,
+      </if>
+      <if test="model != null" >
+        MODEl,
+      </if>
+      <if test="dsc != null" >
+        DSC,
+      </if>
+      <if test="birthday != null" >
+        BIRTHDAY,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="pageId != null" >
+        #{pageId,jdbcType=BIGINT},
+      </if>
+      <if test="model != null" >
+        #{model,jdbcType=INTEGER},
+      </if>
+      <if test="dsc != null" >
+        #{dsc,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=BIGINT},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cap.mvc.model.Page" >
+    update page
+    <set >
+      <if test="model != null" >
+        MODEl = #{model,jdbcType=INTEGER},
+      </if>
+      <if test="dsc != null" >
+        DSC = #{dsc,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        BIRTHDAY = #{birthday,jdbcType=BIGINT},
+      </if>
+    </set>
+    where PAGE_ID = #{pageId,jdbcType=BIGINT}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cap.mvc.model.Page" >
+    update page
+    set MODEl = #{model,jdbcType=INTEGER},
+      DSC = #{dsc,jdbcType=VARCHAR},
+      BIRTHDAY = #{birthday,jdbcType=BIGINT}
+    where PAGE_ID = #{pageId,jdbcType=BIGINT}
+  </update>
+</mapper>

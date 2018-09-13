@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cap.mvc.dao.mapper.ClassmateMapper" >
+  <resultMap id="BaseResultMap" type="cap.mvc.model.Classmate" >
+    <id column="STU_NMB" property="stuNmb" jdbcType="DECIMAL" />
+    <result column="PAGE_ID" property="pageId" jdbcType="BIGINT" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="NICKNAME" property="nickname" jdbcType="VARCHAR" />
+    <result column="PWD" property="pwd" jdbcType="VARCHAR" />
+    <result column="DSC" property="dsc" jdbcType="VARCHAR" />
+    <result column="AUTHORITY" property="authority" jdbcType="INTEGER" />
+    <result column="HEAD_IMG" property="headImg" jdbcType="VARCHAR" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    STU_NMB, PAGE_ID, NAME, NICKNAME, PWD, DSC, AUTHORITY, HEAD_IMG
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from classmate
+    where STU_NMB = #{stuNmb,jdbcType=DECIMAL}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from classmate
+    where STU_NMB = #{stuNmb,jdbcType=DECIMAL}
+  </delete>
+  <insert id="insert" parameterType="cap.mvc.model.Classmate" >
+    insert into classmate (STU_NMB, PAGE_ID, NAME, 
+      NICKNAME, PWD, DSC, 
+      AUTHORITY, HEAD_IMG)
+    values (#{stuNmb,jdbcType=DECIMAL}, #{pageId,jdbcType=BIGINT}, #{name,jdbcType=VARCHAR}, 
+      #{nickname,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{dsc,jdbcType=VARCHAR}, 
+      #{authority,jdbcType=INTEGER}, #{headImg,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="cap.mvc.model.Classmate" >
+    insert into classmate
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="stuNmb != null" >
+        STU_NMB,
+      </if>
+      <if test="pageId != null" >
+        PAGE_ID,
+      </if>
+      <if test="name != null" >
+        NAME,
+      </if>
+      <if test="nickname != null" >
+        NICKNAME,
+      </if>
+      <if test="pwd != null" >
+        PWD,
+      </if>
+      <if test="dsc != null" >
+        DSC,
+      </if>
+      <if test="authority != null" >
+        AUTHORITY,
+      </if>
+      <if test="headImg != null" >
+        HEAD_IMG,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="stuNmb != null" >
+        #{stuNmb,jdbcType=DECIMAL},
+      </if>
+      <if test="pageId != null" >
+        #{pageId,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="dsc != null" >
+        #{dsc,jdbcType=VARCHAR},
+      </if>
+      <if test="authority != null" >
+        #{authority,jdbcType=INTEGER},
+      </if>
+      <if test="headImg != null" >
+        #{headImg,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cap.mvc.model.Classmate" >
+    update classmate
+    <set >
+      <if test="pageId != null" >
+        PAGE_ID = #{pageId,jdbcType=BIGINT},
+      </if>
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null" >
+        NICKNAME = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="pwd != null" >
+        PWD = #{pwd,jdbcType=VARCHAR},
+      </if>
+      <if test="dsc != null" >
+        DSC = #{dsc,jdbcType=VARCHAR},
+      </if>
+      <if test="authority != null" >
+        AUTHORITY = #{authority,jdbcType=INTEGER},
+      </if>
+      <if test="headImg != null" >
+        HEAD_IMG = #{headImg,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where STU_NMB = #{stuNmb,jdbcType=DECIMAL}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cap.mvc.model.Classmate" >
+    update classmate
+    set PAGE_ID = #{pageId,jdbcType=BIGINT},
+      NAME = #{name,jdbcType=VARCHAR},
+      NICKNAME = #{nickname,jdbcType=VARCHAR},
+      PWD = #{pwd,jdbcType=VARCHAR},
+      DSC = #{dsc,jdbcType=VARCHAR},
+      AUTHORITY = #{authority,jdbcType=INTEGER},
+      HEAD_IMG = #{headImg,jdbcType=VARCHAR}
+    where STU_NMB = #{stuNmb,jdbcType=DECIMAL}
+  </update>
+</mapper>

@@ -1,13 +1,13 @@
 package cap.mvc.model;
 
 public class Page {
-    private Long pageId; //内部标识
+    private Long pageId;
 
-    private Integer model; // 类型
+    private Integer model;
 
-    private String dsc; /*由于没想好page有哪些字段，我们直接生成保存个json对象*/
+    private String dsc;
 
-    private Long birthday; //生日
+    private Long birthday;
 
     public Long getPageId() {
         return pageId;
@@ -39,15 +39,5 @@ public class Page {
 
     public void setBirthday(Long birthday) {
         this.birthday = birthday;
-    }
-
-    @Override
-    public String toString() {
-        return "Page{" +
-                "pageId=" + pageId +
-                ", model=" + model +
-                ", dsc='" + dsc + '\'' +
-                ", birthday=" + birthday +
-                '}';
     }
 }

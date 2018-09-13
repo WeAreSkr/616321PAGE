@@ -1,13 +1,13 @@
 package cap.mvc.model;
 
 public class Images {
-    private String picPath; //图片path
+    private String picPath;
 
-    private String dsc; //描绘
+    private String dsc;
 
-    private Integer gro;//组
+    private Integer gro;
 
-    private Long dt; //日期
+    private Long dt;
 
     public String getPicPath() {
         return picPath;
@@ -39,15 +39,5 @@ public class Images {
 
     public void setDt(Long dt) {
         this.dt = dt;
-    }
-
-    @Override
-    public String toString() {
-        return "Images{" +
-                "picPath='" + picPath + '\'' +
-                ", dsc='" + dsc + '\'' +
-                ", gro=" + gro +
-                ", dt=" + dt +
-                '}';
     }
 }

@@ -1,21 +1,21 @@
 package cap.mvc.model;
 
 public class Event {
-    private Integer code; //内部标识
+    private Integer code;
 
-    private String title; //标题
+    private String title;
 
-    private Long content; //内容
+    private String content;
 
-    private String imgagesPath; //多张图片path
+    private String imgagesPath;
 
-    private String editor; //编辑
+    private String editor;
 
-    private Long dt;//日期
+    private Long dt;
 
-    private Integer stuNmb ;//谁发表的
+    private Integer stuNmb;
 
-    private Integer ispass;//是否通过了审核
+    private Integer ispass;
 
     public Integer getCode() {
         return code;
@@ -33,11 +33,11 @@ public class Event {
         this.title = title;
     }
 
-    public Long getContent() {
+    public String getContent() {
         return content;
     }
 
-    public void setContent(Long content) {
+    public void setContent(String content) {
         this.content = content;
     }
 
@@ -79,19 +79,5 @@ public class Event {
 
     public void setIspass(Integer ispass) {
         this.ispass = ispass;
-    }
-
-    @Override
-    public String toString() {
-        return "Event{" +
-                "code=" + code +
-                ", title='" + title + '\'' +
-                ", content=" + content +
-                ", imgagesPath='" + imgagesPath + '\'' +
-                ", editor='" + editor + '\'' +
-                ", dt=" + dt +
-                ", stuNmb=" + stuNmb +
-                ", ispass=" + ispass +
-                '}';
     }
 }

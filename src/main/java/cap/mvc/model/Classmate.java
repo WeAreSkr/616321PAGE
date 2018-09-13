@@ -1,21 +1,21 @@
 package cap.mvc.model;
 
 public class Classmate {
-    private Integer stuNmb; //学号
+    private Integer stuNmb;
 
-    private Long pageId; // 主页
+    private Long pageId;
 
-    private String name; //名字
+    private String name;
 
-    private String nickname; //昵称
+    private String nickname;
 
-    private String dsc; // 签名
+    private String pwd;
 
-    private String pwd;//密码
+    private String dsc;
 
-    private Integer authority; // 权限
+    private Integer authority;
 
-    private String headImg; // 头像路径
+    private String headImg;
 
     public Integer getStuNmb() {
         return stuNmb;
@@ -49,20 +49,20 @@ public class Classmate {
         this.nickname = nickname;
     }
 
-    public String getDsc() {
-        return dsc;
-    }
-
-    public void setDsc(String dsc) {
-        this.dsc = dsc;
-    }
-
     public String getPwd() {
         return pwd;
     }
 
     public void setPwd(String pwd) {
         this.pwd = pwd;
+    }
+
+    public String getDsc() {
+        return dsc;
+    }
+
+    public void setDsc(String dsc) {
+        this.dsc = dsc;
     }
 
     public Integer getAuthority() {
@@ -79,19 +79,5 @@ public class Classmate {
 
     public void setHeadImg(String headImg) {
         this.headImg = headImg;
-    }
-
-    @Override
-    public String toString() {
-        return "Classmate{" +
-                "stuNmb=" + stuNmb +
-                ", pageId=" + pageId +
-                ", name='" + name + '\'' +
-                ", nickname='" + nickname + '\'' +
-                ", dsc='" + dsc + '\'' +
-                ", pwd='" + pwd + '\'' +
-                ", authority=" + authority +
-                ", headImg='" + headImg + '\'' +
-                '}';
     }
 }

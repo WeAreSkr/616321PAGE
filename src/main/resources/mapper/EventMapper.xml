@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cap.mvc.dao.mapper.EventMapper" >
+  <resultMap id="BaseResultMap" type="cap.mvc.model.Event" >
+    <id column="CODE" property="code" jdbcType="INTEGER" />
+    <result column="TITLE" property="title" jdbcType="VARCHAR" />
+    <result column="CONTENT" property="content" jdbcType="VARCHAR" />
+    <result column="IMGAGES_PATH" property="imgagesPath" jdbcType="VARCHAR" />
+    <result column="EDITOR" property="editor" jdbcType="VARCHAR" />
+    <result column="DT" property="dt" jdbcType="BIGINT" />
+    <result column="STU_NMB" property="stuNmb" jdbcType="DECIMAL" />
+    <result column="ISPASS" property="ispass" jdbcType="INTEGER" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    CODE, TITLE, CONTENT, IMGAGES_PATH, EDITOR, DT, STU_NMB, ISPASS
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from event
+    where CODE = #{code,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from event
+    where CODE = #{code,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cap.mvc.model.Event" >
+    insert into event (CODE, TITLE, CONTENT, 
+      IMGAGES_PATH, EDITOR, DT, 
+      STU_NMB, ISPASS)
+    values (#{code,jdbcType=INTEGER}, #{title,jdbcType=VARCHAR}, #{content,jdbcType=VARCHAR}, 
+      #{imgagesPath,jdbcType=VARCHAR}, #{editor,jdbcType=VARCHAR}, #{dt,jdbcType=BIGINT}, 
+      #{stuNmb,jdbcType=DECIMAL}, #{ispass,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="cap.mvc.model.Event" >
+    insert into event
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        CODE,
+      </if>
+      <if test="title != null" >
+        TITLE,
+      </if>
+      <if test="content != null" >
+        CONTENT,
+      </if>
+      <if test="imgagesPath != null" >
+        IMGAGES_PATH,
+      </if>
+      <if test="editor != null" >
+        EDITOR,
+      </if>
+      <if test="dt != null" >
+        DT,
+      </if>
+      <if test="stuNmb != null" >
+        STU_NMB,
+      </if>
+      <if test="ispass != null" >
+        ISPASS,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="code != null" >
+        #{code,jdbcType=INTEGER},
+      </if>
+      <if test="title != null" >
+        #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="imgagesPath != null" >
+        #{imgagesPath,jdbcType=VARCHAR},
+      </if>
+      <if test="editor != null" >
+        #{editor,jdbcType=VARCHAR},
+      </if>
+      <if test="dt != null" >
+        #{dt,jdbcType=BIGINT},
+      </if>
+      <if test="stuNmb != null" >
+        #{stuNmb,jdbcType=DECIMAL},
+      </if>
+      <if test="ispass != null" >
+        #{ispass,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cap.mvc.model.Event" >
+    update event
+    <set >
+      <if test="title != null" >
+        TITLE = #{title,jdbcType=VARCHAR},
+      </if>
+      <if test="content != null" >
+        CONTENT = #{content,jdbcType=VARCHAR},
+      </if>
+      <if test="imgagesPath != null" >
+        IMGAGES_PATH = #{imgagesPath,jdbcType=VARCHAR},
+      </if>
+      <if test="editor != null" >
+        EDITOR = #{editor,jdbcType=VARCHAR},
+      </if>
+      <if test="dt != null" >
+        DT = #{dt,jdbcType=BIGINT},
+      </if>
+      <if test="stuNmb != null" >
+        STU_NMB = #{stuNmb,jdbcType=DECIMAL},
+      </if>
+      <if test="ispass != null" >
+        ISPASS = #{ispass,jdbcType=INTEGER},
+      </if>
+    </set>
+    where CODE = #{code,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cap.mvc.model.Event" >
+    update event
+    set TITLE = #{title,jdbcType=VARCHAR},
+      CONTENT = #{content,jdbcType=VARCHAR},
+      IMGAGES_PATH = #{imgagesPath,jdbcType=VARCHAR},
+      EDITOR = #{editor,jdbcType=VARCHAR},
+      DT = #{dt,jdbcType=BIGINT},
+      STU_NMB = #{stuNmb,jdbcType=DECIMAL},
+      ISPASS = #{ispass,jdbcType=INTEGER}
+    where CODE = #{code,jdbcType=INTEGER}
+  </update>
+</mapper>

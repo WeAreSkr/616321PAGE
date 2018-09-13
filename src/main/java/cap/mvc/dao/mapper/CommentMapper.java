@@ -1,4 +1,4 @@
-package cap.mvc.dao;
+package cap.mvc.dao.mapper;
 
 import cap.mvc.model.Comment;
 
