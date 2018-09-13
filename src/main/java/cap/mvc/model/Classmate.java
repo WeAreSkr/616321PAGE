@@ -11,6 +11,8 @@ public class Classmate {
 
     private String dsc; // 签名
 
+    private String pwd;//密码
+
     private Integer authority; // 权限
 
     private String headImg; // 头像路径
@@ -36,7 +38,7 @@ public class Classmate {
     }
 
     public void setName(String name) {
-        this.name = name == null ? null : name.trim();
+        this.name = name;
     }
 
     public String getNickname() {
@@ -44,7 +46,7 @@ public class Classmate {
     }
 
     public void setNickname(String nickname) {
-        this.nickname = nickname == null ? null : nickname.trim();
+        this.nickname = nickname;
     }
 
     public String getDsc() {
@@ -52,7 +54,15 @@ public class Classmate {
     }
 
     public void setDsc(String dsc) {
-        this.dsc = dsc == null ? null : dsc.trim();
+        this.dsc = dsc;
+    }
+
+    public String getPwd() {
+        return pwd;
+    }
+
+    public void setPwd(String pwd) {
+        this.pwd = pwd;
     }
 
     public Integer getAuthority() {
@@ -68,6 +78,20 @@ public class Classmate {
     }
 
     public void setHeadImg(String headImg) {
-        this.headImg = headImg == null ? null : headImg.trim();
+        this.headImg = headImg;
+    }
+
+    @Override
+    public String toString() {
+        return "Classmate{" +
+                "stuNmb=" + stuNmb +
+                ", pageId=" + pageId +
+                ", name='" + name + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", dsc='" + dsc + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", authority=" + authority +
+                ", headImg='" + headImg + '\'' +
+                '}';
     }
 }

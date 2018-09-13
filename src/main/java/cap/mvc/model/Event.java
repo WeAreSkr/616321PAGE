@@ -30,7 +30,7 @@ public class Event {
     }
 
     public void setTitle(String title) {
-        this.title = title == null ? null : title.trim();
+        this.title = title;
     }
 
     public Long getContent() {
@@ -46,7 +46,7 @@ public class Event {
     }
 
     public void setImgagesPath(String imgagesPath) {
-        this.imgagesPath = imgagesPath == null ? null : imgagesPath.trim();
+        this.imgagesPath = imgagesPath;
     }
 
     public String getEditor() {
@@ -54,7 +54,7 @@ public class Event {
     }
 
     public void setEditor(String editor) {
-        this.editor = editor == null ? null : editor.trim();
+        this.editor = editor;
     }
 
     public Long getDt() {
@@ -79,5 +79,19 @@ public class Event {
 
     public void setIspass(Integer ispass) {
         this.ispass = ispass;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "code=" + code +
+                ", title='" + title + '\'' +
+                ", content=" + content +
+                ", imgagesPath='" + imgagesPath + '\'' +
+                ", editor='" + editor + '\'' +
+                ", dt=" + dt +
+                ", stuNmb=" + stuNmb +
+                ", ispass=" + ispass +
+                '}';
     }
 }

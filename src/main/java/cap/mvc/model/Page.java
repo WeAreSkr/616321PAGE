@@ -30,7 +30,7 @@ public class Page {
     }
 
     public void setDsc(String dsc) {
-        this.dsc = dsc == null ? null : dsc.trim();
+        this.dsc = dsc;
     }
 
     public Long getBirthday() {
@@ -39,5 +39,15 @@ public class Page {
 
     public void setBirthday(Long birthday) {
         this.birthday = birthday;
+    }
+
+    @Override
+    public String toString() {
+        return "Page{" +
+                "pageId=" + pageId +
+                ", model=" + model +
+                ", dsc='" + dsc + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }

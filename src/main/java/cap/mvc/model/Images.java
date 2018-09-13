@@ -14,7 +14,7 @@ public class Images {
     }
 
     public void setPicPath(String picPath) {
-        this.picPath = picPath == null ? null : picPath.trim();
+        this.picPath = picPath;
     }
 
     public String getDsc() {
@@ -22,7 +22,7 @@ public class Images {
     }
 
     public void setDsc(String dsc) {
-        this.dsc = dsc == null ? null : dsc.trim();
+        this.dsc = dsc;
     }
 
     public Integer getGro() {
@@ -39,5 +39,15 @@ public class Images {
 
     public void setDt(Long dt) {
         this.dt = dt;
+    }
+
+    @Override
+    public String toString() {
+        return "Images{" +
+                "picPath='" + picPath + '\'' +
+                ", dsc='" + dsc + '\'' +
+                ", gro=" + gro +
+                ", dt=" + dt +
+                '}';
     }
 }

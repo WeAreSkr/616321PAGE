@@ -35,6 +35,7 @@ create table ClassMate
    PAGE_ID              bigint not null,
    NAME                 varchar(6),
    NICKNAME             varchar(12),
+   PWD                  varchar(16),
    DSC                  varchar(1024),
    AUTHORITY            int,
    HEAD_IMG             varchar(1024),
