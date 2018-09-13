@@ -1,4 +1,4 @@
-package cap.controller.util;
+package cap.mvc.util;
 
 import cap.LocalConfig;
 import org.springframework.stereotype.Controller;
