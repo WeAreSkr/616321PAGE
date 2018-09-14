@@ -20,6 +20,13 @@
     from event
     where CODE = #{code,jdbcType=INTEGER}
   </select>
+
+  <select id="selectPass" resultType="EVENT">
+    select
+    <include refid="Base_Column_List" />
+    from event
+  </select>
+
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from event
     where CODE = #{code,jdbcType=INTEGER}

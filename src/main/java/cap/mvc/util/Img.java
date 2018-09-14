@@ -29,8 +29,10 @@ public class Img {
             filePath = LocalConfig.getPathImgs() + iconUrl;
         }else if(imgpath.equals("head")) {
             filePath = LocalConfig.getPathImghead() + iconUrl;
-        }else if(imgpath.equals("userImg")) {
-            filePath = LocalConfig.getPathUserimg() + iconUrl;
+        }else if(imgpath.equals("userimg")) {
+            filePath = LocalConfig.getPathImgUser() + iconUrl;
+        }else if(imgpath.equals("eventimg")) {
+            filePath = LocalConfig.getPathImgsEvent() + iconUrl;
         }else {
             filePath = LocalConfig.noImg;
         }
@@ -61,15 +63,19 @@ public class Img {
 
 
     @RequestMapping(value = "/uploadimage",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
-    public String uploadImage(HttpServletRequest request,
-                              HttpServletResponse response,@RequestParam(value = "imgs", required = true) MultipartFile file)
+    public String uploadImage(@RequestParam(value = "imgs", required = true) MultipartFile[] file)
             throws IllegalStateException, IOException {
 
         File targetFile = new File(LocalConfig.getPathImgs()+"test.jpg");
         if (!targetFile.exists()) {
             targetFile.mkdirs();
         }
-        file.transferTo(targetFile);
+        file[0].transferTo(targetFile);
+        targetFile = new File(LocalConfig.getPathImgs()+"test2.jpg");
+        if (!targetFile.exists()) {
+            targetFile.mkdirs();
+        }
+        file[1].transferTo(targetFile);
         return "redirect:/index.jsp";
     }
 

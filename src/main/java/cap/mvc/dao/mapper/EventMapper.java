@@ -2,6 +2,8 @@ package cap.mvc.dao.mapper;
 
 import cap.mvc.model.Event;
 
+import java.util.ArrayList;
+
 public interface EventMapper {
     int deleteByPrimaryKey(Integer code);
 
@@ -14,4 +16,6 @@ public interface EventMapper {
     int updateByPrimaryKeySelective(Event record);
 
     int updateByPrimaryKey(Event record);
+
+    ArrayList<Event> selectPass();
 }

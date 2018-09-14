@@ -1,5 +1,12 @@
 package cap.mvc.model;
 
+import cap.util.FileName;
+
+import javax.xml.crypto.Data;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+
 public class Event {
     private Integer code;
 
@@ -44,6 +51,9 @@ public class Event {
     public String getImgagesPath() {
         return imgagesPath;
     }
+    public String[] getDivPath() {
+        return FileName.divStr(getImgagesPath());
+    }
 
     public void setImgagesPath(String imgagesPath) {
         this.imgagesPath = imgagesPath;
@@ -60,7 +70,10 @@ public class Event {
     public Long getDt() {
         return dt;
     }
-
+    public String getFormatDt(){
+        Date date = new Date(getDt());
+        return  date.toString();
+    }
     public void setDt(Long dt) {
         this.dt = dt;
     }

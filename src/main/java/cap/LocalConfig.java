@@ -3,11 +3,12 @@ package cap;
 import java.io.File;
 
 public class LocalConfig {
-    public final static String PATH_IMGROOT = "D:/Img/";
+    public final static String PATH_IMGROOT = "D:/img/";
 
-    public final static String PATH_USERIMG = "UserImg/";
+    public final static String PATH_USERIMG = "userimg/";
     public final static String PATH_IMGHEAD = "head/";
-    public final static String PATH_IMGS = "Imgs/";
+    public final static String PATH_IMGS = "imgs/";
+    public final static String PATH_IMGSEVENT = "eventimgs/";
 
     public static String noImg= PATH_IMGROOT+"noimg.jpg";
 
@@ -35,9 +36,13 @@ public class LocalConfig {
         if(!file.exists()) {
             file.mkdir();
         }
+        file = new File(PATH_IMGROOT+PATH_IMGSEVENT);
+        if(!file.exists()) {
+            file.mkdir();
+        }
     }
 
-    public static String getPathUserimg() {
+    public static String getPathImgUser() {
         return PATH_IMGROOT+PATH_USERIMG;
     }
 
@@ -49,4 +54,5 @@ public class LocalConfig {
         return PATH_IMGROOT + PATH_IMGS;
     }
 
+    public static String getPathImgsEvent() {return PATH_IMGROOT+PATH_IMGSEVENT; }
 }
