@@ -1,7 +1,10 @@
 package cap.mvc.model;
 
 import cap.util.FileName;
+import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import javax.xml.crypto.Data;
 import java.util.Arrays;
 import java.util.Date;
@@ -10,12 +13,15 @@ import java.util.List;
 public class Event {
     private Integer code;
 
+    @NotEmpty(message = "标题不能为空哦")
+    @Size(max = 1024 ,message = "最大输入1024个字")
     private String title;
-
+    @Size(max =  2048 ,message = "最大输入2048个字")
     private String content;
 
     private String imgagesPath;
 
+    @Size(max = 12,message = "最大输入12个字")
     private String editor;
 
     private Long dt;

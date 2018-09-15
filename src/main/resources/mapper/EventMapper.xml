@@ -25,6 +25,7 @@
     select
     <include refid="Base_Column_List" />
     from event
+    ORDER  BY DT DESC
   </select>
 
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >

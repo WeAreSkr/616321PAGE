@@ -11,6 +11,7 @@
 	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<!-- 注解驱动 -->
 	<mvc:annotation-driven/>
+
 	<mvc:resources location="/image" mapping="**"/>
 
     <!-- 自动扫描包 -->
@@ -83,4 +84,6 @@
 	<!--配置基于注解的声明式事务
     默认使用注解来管理事务行为-->
 	<tx:annotation-driven transaction-manager="transactionManager"/>
+
+
 </beans>

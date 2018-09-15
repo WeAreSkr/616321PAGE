@@ -44,12 +44,14 @@ public class FileName{
         String result = "";
         if(strs == null ) return  null;
         for( int i = 0; i< strs.length ; i++ ) {
-            if(strs.length-1 == i)
-                result += strs[i];
-            else
-                result += strs[i]+"|";
+            if(strs[i] != null) {
+                if (strs.length - 1 == i)
+                    result += strs[i];
+                else
+                    result += strs[i] + "|";
+            }
         }
-        return  result;
+        return "".equals(result) ?  null : result;
     }
 
     /**
@@ -58,7 +60,7 @@ public class FileName{
      * @return
      */
     public static String[] divStr(String strfiles) {
-       return strfiles.split("[|]");
+       return strfiles == null ? null :strfiles.split("[|]");
     }
 
 }

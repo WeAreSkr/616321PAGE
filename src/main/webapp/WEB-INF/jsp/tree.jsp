@@ -1,4 +1,5 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!doctype html>
 <html>
 <head>
@@ -12,7 +13,7 @@
 <body style="background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
 <header class="site-header">
     <div class="wrapper">
-        <h1 class="site-header__title">jquery Vertical Time Axis</h1>
+        <h1 class="site-header__title">616321</h1>
     </div>
 </header>
 

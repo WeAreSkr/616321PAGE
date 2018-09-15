@@ -2,6 +2,8 @@ package cap.mvc.dao.mapper;
 
 import cap.mvc.model.Classmate;
 
+import java.util.List;
+
 public interface ClassmateMapper {
     int deleteByPrimaryKey(Integer stuNmb);
 
@@ -14,4 +16,8 @@ public interface ClassmateMapper {
     int updateByPrimaryKeySelective(Classmate record);
 
     int updateByPrimaryKey(Classmate record);
+
+    List<String> findNoPwdNames();
+
+    int addPwd(Classmate pwd);
 }

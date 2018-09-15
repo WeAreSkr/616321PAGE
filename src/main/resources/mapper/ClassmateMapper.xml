@@ -20,6 +20,12 @@
     from classmate
     where STU_NMB = #{stuNmb,jdbcType=DECIMAL}
   </select>
+  <select id="findNoPwdNames" resultType="String">
+    select
+    NAME,PWD
+    from classmate
+    where ISNULL(PWD)
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from classmate
     where STU_NMB = #{stuNmb,jdbcType=DECIMAL}
@@ -124,5 +130,14 @@
       AUTHORITY = #{authority,jdbcType=INTEGER},
       HEAD_IMG = #{headImg,jdbcType=VARCHAR}
     where STU_NMB = #{stuNmb,jdbcType=DECIMAL}
+  </update>
+
+  <update id="addPwd" parameterType="cap.mvc.model.Classmate">
+    update classmate
+    set
+      PWD = #{pwd,jdbcType=VARCHAR}
+    where STU_NMB = #{stuNmb,jdbcType=DECIMAL}
+    and  NAME = #{name,jdbcType=VARCHAR}
+    and ISNULL(PWD)
   </update>
 </mapper>

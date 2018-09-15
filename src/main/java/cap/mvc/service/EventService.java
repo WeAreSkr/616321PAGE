@@ -22,4 +22,5 @@ public class EventService {
     public ArrayList<Event> getEvents() {
         return eventMapper.selectPass();
     }
+
 }
