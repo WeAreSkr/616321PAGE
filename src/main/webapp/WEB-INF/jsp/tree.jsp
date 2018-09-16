@@ -19,7 +19,7 @@
 <div style="float:right;">
 <c:if test="${user!=null}">
 
-    <p>${user.name}</p>
+    <p>${user.nickname}</p>
     <img width="100px" height="100px" src="img/head/${user.headImg}">
 
 </c:if>
