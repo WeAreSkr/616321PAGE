@@ -16,7 +16,17 @@
         <h1 class="site-header__title">616321</h1>
     </div>
 </header>
+<div style="float:right;">
+<c:if test="${user!=null}">
 
+    <p>${user.name}</p>
+    <img width="100px" height="100px" src="img/head/${user.headImg}">
+
+</c:if>
+<c:if test="${user==null}">
+    <a href="/login">登录</a>
+</c:if>
+</div>
 <section class="timeline">
     <div class="wrapper">
         <c:forEach items="${events}" var = "event"  varStatus="statu">
