@@ -3,13 +3,13 @@ package cap.mvc.dao.mapper;
 import cap.mvc.model.Images;
 
 public interface ImagesMapper {
-    int deleteByPrimaryKey(String picPath);
+    int deleteByPrimaryKey(Integer id);
 
     int insert(Images record);
 
     int insertSelective(Images record);
 
-    Images selectByPrimaryKey(String picPath);
+    Images selectByPrimaryKey(Integer id);
 
     int updateByPrimaryKeySelective(Images record);
 
