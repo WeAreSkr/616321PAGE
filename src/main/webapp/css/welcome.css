@@ -22,8 +22,13 @@ img {
 
 /* _site-header.css */
 .site-header {
-    text-align: center;
-    padding: 40px 0;
+    position: fixed;
+    width: 100%;
+    /*text-align: center;*/
+z-index: 1;
+    padding: 0px;
+   top: 0px;
+
 
 }
 .site-header__title {
@@ -221,3 +226,9 @@ img {
 .site-footer__text__link {
     color: #8287a9;
 }
+
+
+
+
+
+
