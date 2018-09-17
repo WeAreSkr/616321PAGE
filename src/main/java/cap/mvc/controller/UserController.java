@@ -4,6 +4,7 @@ import cap.mvc.bean.Msg;
 import cap.mvc.model.Classmate;
 import cap.mvc.service.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -11,7 +12,9 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
-@SessionAttributes("user")
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
 @Controller
 @RequestMapping("/")
 public class UserController {
@@ -38,17 +41,26 @@ public class UserController {
     }
 
     @RequestMapping(value = "login",method = RequestMethod.POST)
-    public ModelAndView login(Classmate classmate) {
+    public ModelAndView login(Classmate classmate,HttpServletRequest request) {
         ModelAndView modelAndView = new ModelAndView("result");
         Classmate res = service.login(classmate);
         if(res == null){
             modelAndView.addObject("msg",new Msg("login",1,"密码错误，或没激活"));
-            modelAndView.addObject("user",null);
+            request.getSession().removeAttribute("user");
         }else {
-            modelAndView.addObject("user",res);
+            res.setPwd(""); //把pwd消除掉
+            request.getSession().setAttribute("user",res);
             modelAndView.addObject("msg",new Msg("login",0,"成功"));
             modelAndView.setViewName("redirect:/tree");
         }
         return modelAndView;
+    }
+
+    @RequestMapping(value = "logout",method = RequestMethod.GET)
+    public String logout(Model model, HttpServletRequest request, HttpServletResponse response) {
+        String context = request.getContextPath();
+        request.getSession().removeAttribute("user");
+        String url = request.getServletPath();
+        return "redirect:/tree";
     }
 }

@@ -1,6 +1,8 @@
 package cap.mvc.model;
 
 public class Images {
+    private Integer id;
+
     private String picPath;
 
     private String dsc;
@@ -8,6 +10,14 @@ public class Images {
     private Integer gro;
 
     private Long dt;
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
     public String getPicPath() {
         return picPath;

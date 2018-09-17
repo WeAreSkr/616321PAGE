@@ -3,7 +3,9 @@
 /* Created on:     2018/9/13 11:51:57                           */
 /*==============================================================*/
 
-
+/*
+请手动把所有主键设为自动递增
+ */
 drop table if exists COMMENTS;
 
 drop table if exists ClassMate;
@@ -35,7 +37,7 @@ create table ClassMate
    PAGE_ID              bigint not null,
    NAME                 varchar(6),
    NICKNAME             varchar(12),
-   PWD                  varchar(16),
+   PWD                  varchar(32),
    DSC                  varchar(1024),
    AUTHORITY            int,
    HEAD_IMG             varchar(1024),
@@ -63,11 +65,12 @@ create table EVENT
 /*==============================================================*/
 create table IMAGES
 (
-   PIC_PATH             varchar(1024) not null,
+   ID                   bigint not null,
+   PIC_PATH             varchar(1024),
    DSC                  varchar(1024),
    GRO                  int,
    DT                   bigint,
-   primary key (PIC_PATH)
+   primary key (ID)
 );
 
 /*==============================================================*/

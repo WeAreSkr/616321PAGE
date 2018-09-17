@@ -3,8 +3,8 @@ package cap;
 import java.io.File;
 
 public class LocalConfig {
-    public final static String PATH_IMGROOT = "D:/img/";
 
+    public final static String PATH_IMGROOT = "D:/img/";
     public final static String PATH_USERIMG = "userimg/";
     public final static String PATH_IMGHEAD = "head/";
     public final static String PATH_IMGS = "imgs/";

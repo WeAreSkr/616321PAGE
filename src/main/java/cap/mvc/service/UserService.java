@@ -39,7 +39,10 @@ public class UserService {
     public Classmate login(Classmate classmate) {
         if(classmate == null) return  null;
         Classmate res  = classmateMapper.selectByPrimaryKey(classmate.getStuNmb());
-        if(res.getPwd() != null && MD5.md5(classmate.getPwd()).equals(res.getPwd())) {
+        if(res != null
+                && classmate.getPwd() != null
+                && MD5.md5(classmate.getPwd())
+                .equals(res.getPwd())) {
             return res;
         }else {
             return null;
