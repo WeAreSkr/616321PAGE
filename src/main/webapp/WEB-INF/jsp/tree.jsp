@@ -58,11 +58,9 @@
             <!-- menu section -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="# ">首页</a></li>
-                    <li><a href="# ">关于我们</a></li>
-                    <li><a href="#">意见建议</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="/addevent">添加日志</a></li>
+                    <li><a href="# ">班级志</a></li>
+                    <li><a href="# ">班级相册</a></li>
+                    <li><a href="#">同学录</a></li>
                     <li class="dropdown">
                         <c:if test="${user!=null}">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
@@ -70,13 +68,11 @@
                                 <b class="caret" ></b>
                             </a>
                             <ul class="dropdown-menu" style="width:100px;">
-                                <li><a href="#">我的信息</a></li>
-                                <li><a href="#">退出登录</a></li>
-                                <li><a href="#">Jasper Report</a></li>
+                                <li><a href="/page?stunmb=${user.stuNmb}">我的主页</a></li>
+                                <li><a href="/page">编辑主页</a></li>
+                                <li><a href="/logout">退出登录</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">分离的链接</a></li>
-                                <li class="divider"></li>
-                                <li><a href="#">另一个分离的链接</a></li>
+                                <li><a href="/authority/0/addevent">添加班级志</a></li>
                             </ul>
                         </c:if>
                         <c:if test="${user==null}">
