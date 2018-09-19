@@ -14,7 +14,10 @@ public class Classmate {
     private String dsc;
 
     private Integer authority;
-
+    /**
+     * 0 表示同学权限 ，有留言评论，查看隐私信息权限
+     * 1 表示班长权限 ，有修改相册， 审核核级志的权限
+     */
     private String headImg;
 
     public Integer getStuNmb() {

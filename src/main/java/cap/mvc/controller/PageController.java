@@ -41,7 +41,13 @@ private UserService userService;
     }
 
     @RequestMapping(value = "page",method = RequestMethod.POST)
-    public String page(PageEx pageEx,HttpServletRequest request){
+    public String page(Model model,PageEx pageEx, HttpServletRequest request){
+        Msg msg = new Msg();
+        msg.setCode(0);
+        msg.setRedirect("/");
+        msg.setTitle("编辑主页");
+        msg.setMsg("更新成功");
+        model.addAttribute("msg",msg);
         pageService.updatePageEx(pageEx, (Classmate) request.getSession().getAttribute("user"));
         return "result";
     }

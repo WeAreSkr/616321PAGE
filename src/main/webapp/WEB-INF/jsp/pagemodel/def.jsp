@@ -9,6 +9,7 @@ qq:<p>${page.qq}</p><br/>
 
 电话:<p>${page.phone}</p><br/>
 文章:<p>${page.desc}</p><br/>
+sex: <p>${page.sex}</p>
 <form action="/comment" method="post">
     <input type="hidden" name="pageid" value="${page.pageId}">
     <input type="textarea" cols="30" name="msg" rows="30"/><br>

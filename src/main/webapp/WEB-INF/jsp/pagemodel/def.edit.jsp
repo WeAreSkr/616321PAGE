@@ -6,11 +6,27 @@
 </head>
 <body>
 <form action="/page" method="post" >
-    <input type="hidden" name="pageId" value="${page.pageId}">
-    qq:<input type="text" name="qq" value="${page.qq}">
-    desc:<input type="text" name="desc" value="${page.desc}">
-    phone:<input type="text" name="phone" value="${page.phone}">
-    <input type="submit" value="submit">
+    <table>
+        <input type="hidden" name="pageId" value="${page.pageId}">
+
+<tr>
+   <td>qq:<br/> </td> <td><input type="text" name="qq" value="${page.qq}"></td>
+</tr>
+        <tr>
+            <td>desc: </td> <td>  <textarea name="desc"  cols="22" rows="7" warp="virtual">${page.desc}</textarea></td>
+        </tr>
+        <tr>
+            <td>  phone:</td> <td> <input type="text" name="phone" value="${page.phone}"> </td>
+        </tr>
+        <tr>
+            <td> sex:</td> <td>   <input type="radio" name="sex" value="boy">boy<input type="radio" name="sex" value="girl">gril </td>
+        </tr>
+
+        <tr>
+            <td>  <input type="submit" value="submit"></td>
+        </tr>
+
+    </table>
 </form>
 </body>
 </html>

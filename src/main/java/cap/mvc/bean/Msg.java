@@ -7,8 +7,10 @@ public class Msg {
     private int code;
 
     private String msg;
+    private String redirect;
 
     public Msg() {
+
     }
 
     public Msg(String title, int code, String msg) {
@@ -39,5 +41,13 @@ public class Msg {
 
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    public String getRedirect() {
+        return redirect;
+    }
+
+    public void setRedirect(String redirect) {
+        this.redirect = redirect;
     }
 }

@@ -70,9 +70,14 @@
                             <ul class="dropdown-menu" style="width:100px;">
                                 <li><a href="/page?stunmb=${user.stuNmb}">我的主页</a></li>
                                 <li><a href="/page">编辑主页</a></li>
-                                <li><a href="/logout">退出登录</a></li>
-                                <li class="divider"></li>
                                 <li><a href="/authority/0/addevent">添加班级志</a></li>
+                                <li><a href="#"> 上传相片至班级照片</a> </li>
+                                <c:if test="${user.authority == 1}">
+                                    <li class="divider"></li>
+                                    <li><a href="/authority/1/pass">审核班级志(班长特有哦)</a></li>
+                                </c:if>
+                                <li class="divider"></li>
+                                <li><a href="/logout">退出登录</a></li>
                             </ul>
                         </c:if>
                         <c:if test="${user==null}">
@@ -96,7 +101,7 @@
         </div>
         <br>
         <div class="ui-dialog-l40 ui-dialog-pt15">
-            <input class="ui-dialog-input ui-dialog-input-password" type="text" placeholder="密码" name="pwd"/>
+            <input class="ui-dialog-input ui-dialog-input-password" type="password" placeholder="密码" name="pwd"/>
         </div>
         <br>
         <div>
