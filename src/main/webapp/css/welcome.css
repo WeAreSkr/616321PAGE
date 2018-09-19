@@ -212,7 +212,11 @@ z-index: 1;
         line-height: 28px;
     }
 }
+.navbar{
+    height: auto;
 
+
+}
 /* _site-footer.css */
 .site-footer {
     padding: 50px 0 200px 0;
@@ -226,9 +230,3 @@ z-index: 1;
 .site-footer__text__link {
     color: #8287a9;
 }
-
-
-
-
-
-
