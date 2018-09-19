@@ -18,4 +18,5 @@ public interface EventMapper {
     int updateByPrimaryKey(Event record);
 
     ArrayList<Event> selectPass();
+    ArrayList<Event> selectNoPass();
 }

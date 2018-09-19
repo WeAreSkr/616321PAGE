@@ -8,5 +8,6 @@
 code: ${msg.code}
 <br/>
 msg: ${msg.msg}
+<a href="/">传送门</a>
 </body>
 </html>

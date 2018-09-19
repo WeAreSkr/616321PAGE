@@ -25,6 +25,15 @@
     select
     <include refid="Base_Column_List" />
     from event
+    WHERE ispass = 1
+    ORDER  BY DT DESC
+  </select>
+
+  <select id="selectNoPass" resultType="EVENT">
+    select
+    <include refid="Base_Column_List" />
+    from event
+    WHERE ispass = 0
     ORDER  BY DT DESC
   </select>
 
@@ -133,4 +142,5 @@
       ISPASS = #{ispass,jdbcType=INTEGER}
     where CODE = #{code,jdbcType=INTEGER}
   </update>
+
 </mapper>

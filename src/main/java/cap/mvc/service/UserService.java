@@ -49,4 +49,9 @@ public class UserService {
         }
     }
 
+    public Classmate selectTmpbyKey(int stuNmb) {
+        Classmate classmate =  classmateMapper.selectByPrimaryKey(stuNmb);
+        classmate.setPwd("");
+        return  classmate;
+    }
 }

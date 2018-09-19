@@ -9,6 +9,14 @@ public class Page {
 
     private Long birthday;
 
+    public Page() {
+    }
+    public Page(Page page) {
+        this.pageId = page.pageId;
+        this.model = page.model;
+        this.dsc = page.dsc;
+        this.birthday = page.birthday;
+    }
     public Long getPageId() {
         return pageId;
     }
@@ -39,5 +47,15 @@ public class Page {
 
     public void setBirthday(Long birthday) {
         this.birthday = birthday;
+    }
+
+    @Override
+    public String toString() {
+        return "Page{" +
+                "pageId=" + pageId +
+                ", model=" + model +
+                ", dsc='" + dsc + '\'' +
+                ", birthday=" + birthday +
+                '}';
     }
 }

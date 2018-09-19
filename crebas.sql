@@ -51,7 +51,7 @@ create table EVENT
 (
    CODE                 int not null,
    TITLE                varchar(1024),
-   CONTENT              bigint,
+   CONTENT              varchar(2048),
    IMGAGES_PATH         varchar(1024),
    EDITOR               varchar(12),
    DT                   bigint,

@@ -4,11 +4,7 @@ import cap.LocalConfig;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.multipart.MultipartFile;
 
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.File;
 import java.io.FileInputStream;
@@ -24,7 +20,6 @@ public class Img {
     @RequestMapping("img/{dirimg}/{img:.+}")
     public void imgs(@PathVariable("dirimg") String imgpath,@PathVariable(value = "img") String iconUrl, HttpServletResponse response) {
         String filePath = null;
-        System.out.println(iconUrl);
         if(imgpath.equals("imgs")) {
             filePath = LocalConfig.getPathImgs() + iconUrl;
         }else if(imgpath.equals("head")) {

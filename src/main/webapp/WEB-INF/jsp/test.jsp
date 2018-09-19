@@ -5,10 +5,13 @@
     <title>Test</title>
 </head>
 <body>
-<c:forEach items="${events }" var = "event"  varStatus="statu">
-    title:<h3>${event.title}</h3>
-    content:<h3>${event.content}</h3>
-</c:forEach>
+<form action="/page" method="post" >
+<input type="hidden" name="pageId" value="${page.pageId}">
+qq:<input type="text" name="qq" value="${page.qq}">
+desc:<input type="text" name="desc" value="${page.desc}">
+phone:<input type="text" name="phone" value="${page.phone}">
+<input type="submit" value="submit">
+</form>
 </body>
 </html>
 
