@@ -47,7 +47,7 @@
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="# ">班级志</a></li>
-                    <li><a href="/login">班级相册</a></li>
+                    <li><a href="/photo">班级相册</a></li>
                     <li><a href="#">同学录</a></li>
                     <li class="dropdown">
                         <c:if test="${user!=null}">

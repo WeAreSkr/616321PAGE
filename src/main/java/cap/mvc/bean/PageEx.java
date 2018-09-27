@@ -11,6 +11,7 @@ public class PageEx extends Page {
     private String qq;
     private String phone;
     private String desc;
+
     /**
      * enum {"boy","girl"}
      */

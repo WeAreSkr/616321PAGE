@@ -20,8 +20,7 @@
 <form name="/authority/1/pass" method="post">
 <h1>请选择通过的事件</h1>
 <c:forEach items="${nopassevents}" var = "event"  varStatus="statu">
-    <div class="block">
-
+    <div for="codeinput" class="block">
     <h2>${event.formatDt}</h2><br/>
             <c:forEach items="${event.divPath}" var="path" >
                 <img src="/img/eventimg/${path}"/>
@@ -31,7 +30,7 @@
             内容：${event.content}<br/>
             编辑：${event.editor}<br/>
             提交： ${event.stuNmb}
-    <input class="right" type="checkbox" name="code" value="${event.code}"></div>
+    <input id="codeinput" class="right" type="checkbox" name="code" value="${event.code}"/>
     </div>
 </c:forEach>
     <input class="right" type="submit" value="确定" >
