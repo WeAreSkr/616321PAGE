@@ -32,6 +32,10 @@
 			<mvc:mapping path="/authority/0/*"/>
 			<bean class="cap.interceptor.LoginInterceptor"></bean>
 		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/authority/1/*"/>
+			<bean class="cap.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
 	</mvc:interceptors>
 
 	<!-- ************************* -->

@@ -1,24 +1,25 @@
 package cap.interceptor;
 
+import cap.mvc.model.Classmate;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 
-
-
-public class LoginInterceptor implements HandlerInterceptor {
+/**
+ * 拦截审核权限
+ */
+public class AuthorityInterceptor  implements HandlerInterceptor {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
-        HttpSession session = request.getSession();
-        if(session.getAttribute("user") == null){
-            response.sendRedirect("/tree");
-            return false;
+        Classmate u = (Classmate) request.getSession().getAttribute("user");
+        if(u != null && u.getAuthority() == 1) {
+            return  true;
         }
-        return true;
+        response.sendRedirect("/tree");
+        return false;
     }
 
     @Override
