@@ -1,6 +1,7 @@
 <html>
 <body>
 <h2>Hello World!</h2>
+
 <a href="/authority/0/addevent" >Add Event</a>
 <a href="/tree">Tree</a>
 <a href="/register">Register</a>

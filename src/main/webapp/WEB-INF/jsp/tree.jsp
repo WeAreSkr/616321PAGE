@@ -19,27 +19,15 @@
         .dropdown {
             display: inline-block;
         }
-
-        .dropdown-content {
-            display: none;
-            position: absolute;
-            background-color: #f9f9f9;
-            min-width: 160px;
-            box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-        }
-
         .dropdown-content a {
             color: black;
             padding: 12px 16px;
             text-decoration: none;
             display: block;
         }
-
         .dropdown-content a:hover {background-color: #f1f1f1}
 
-        .dropdown:hover .dropdown-content {
-            display: block;
-        }
+
     </style>
 </head>
 <body style="background-repeat:no-repeat ;background-size:100% 100%;background-attachment: fixed;">
@@ -53,13 +41,13 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#">616321</a>
+                <a class="navbar-brand" href="/tree">616321</a>
             </div>
             <!-- menu section -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="# ">班级志</a></li>
-                    <li><a href="# ">班级相册</a></li>
+                    <li><a href="/login">班级相册</a></li>
                     <li><a href="#">同学录</a></li>
                     <li class="dropdown">
                         <c:if test="${user!=null}">

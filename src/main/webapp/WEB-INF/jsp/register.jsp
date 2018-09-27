@@ -15,9 +15,9 @@
         <option value="${name}">${name}</option>
     </c:forEach>
 </select>
-   stuNmb: <input type="text" name="stuNmb"/>
-        pwd<input type="password" name="pwd"/>
-        repwd<input type="password" name="rePwd"/>
+    stuNmb: <input type="text" name="stuNmb"/>
+    pwd<input type="password" name="pwd"/>
+    repwd<input type="password" name="rePwd"/>
     <input type="submit" value="register"/>
 </form>
 </body>

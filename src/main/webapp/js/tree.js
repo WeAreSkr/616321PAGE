@@ -82,7 +82,12 @@ Dialog('dialogDrag','dialogMove');
 function onMoveStart(){
 
 }
+//	拖拽对话框实例对象
+Dialog('dialogDrag1','dialogMove1');
 
+function onMoveStart(){
+
+}
 
 //	重新调整对话框的位置和遮罩，并且展现
 function showDialog(){
@@ -91,10 +96,20 @@ function showDialog(){
     autoCenter( g('dialogMove') );
     fillToBody( g('mask') );
 }
-
+//	重新调整对话框的位置和遮罩，并且展现
+function showDialog1(){
+    g('dialogMove1').style.display = 'block';
+    g('mask1').style.display = 'block';
+    autoCenter( g('dialogMove1') );
+    fillToBody( g('mask1') );
+}
 //	关闭对话框
 function hideDialog(){
     g('dialogMove').style.display = 'none';
     g('mask').style.display = 'none';
+}
+function hideDialog1(){
+    g('dialogMove1').style.display = 'none';
+    g('mask1').style.display = 'none';
 }
 // 弹出登录框结束

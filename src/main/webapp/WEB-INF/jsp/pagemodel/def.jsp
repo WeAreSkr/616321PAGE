@@ -4,17 +4,20 @@
 <head>
     <title>${tmpuser.name}的主页</title>
 </head>
-<p>
-qq:<p>${page.qq}</p><br/>
+<label>QQ:</label>${page.qq}<br/>
 
-电话:<p>${page.phone}</p><br/>
-文章:<p>${page.desc}</p><br/>
-sex: <p>${page.sex}</p>
+<label>电话:</label>${page.phone}<br/>
+<label>格言:</label>${page.desc}<br/>
+<label>性别:</label>${page.sex}<br>
 <form action="/comment" method="post">
     <input type="hidden" name="pageid" value="${page.pageId}">
-    <input type="textarea" cols="30" name="msg" rows="30"/><br>
-    <input type="submit" value="留言"/>
-    <br>
+    <table>
+        <h3 style="position: center">留言栏</h3>
+        <textarea name="msg" id="" cols="30" rows="10"></textarea>
+    </table>
+    <%--<input type="textarea" cols="30" name="msg" rows="30"/><br>--%>
+    <input type="submit" value="留言" style="width: 230px;height: 40px;background: #3b7ae3;border-radius:10px;"/>
+
 </form>
 <a href="/page">edit</a>
 </body>
