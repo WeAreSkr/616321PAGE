@@ -57,7 +57,7 @@ public class SavaHtml {
                 StringBuilder builder = new StringBuilder();
                 String s = null;
                 while((s=br.readLine())!=null){
-                    builder.append(s);
+                    builder.append(s+"\n");
                 }
                 result = builder.toString();
                 reader.close();

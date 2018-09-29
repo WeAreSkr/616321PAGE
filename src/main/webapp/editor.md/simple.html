@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+    <head>
+        <meta charset="utf-8" />
+        <title> Editor</title>
+
+        <link rel="stylesheet" href="css/editormd.css" />
+        <link rel="shortcut icon" href="https://pandao.github.io/editor.md/favicon.ico" type="image/x-icon" />
+    </head>
+    <body>
+	
+<div class="editormd" id="test-editormd">
+    <textarea class="editormd-markdown-textarea" name="content"># title
+## content</textarea>
+	<!-- 第二个隐藏文本域，用来构造生成的HTML代码，方便表单POST提交，这里的name可以任意取，后台接受时以这个name键为准 -->
+    <textarea class="editormd-html-textarea" name="html"></textarea>
+</div>
+
+<button onclick="show()">show</button>
+        <script src="examples/js/jquery.min.js"></script>
+        <script src="editormd.min.js"></script>
+		
+        <script type="text/javascript">
+			var testEditor;
+
+            $(function() {
+                testEditor = editormd("test-editormd", {
+                    width   : "90%",
+                    height  : 640,
+					 saveHTMLToTextarea: true,
+                    syncScrolling : "single",
+                    path    : "lib/"
+                });
+                
+                /*
+                // or
+                testEditor = editormd({
+                    id      : "test-editormd",
+                    width   : "90%",
+                    height  : 640,
+                    path    : "lib/"
+                });
+                */
+            });
+			
+			function show() {
+				var content = $(".editormd-markdown-textarea").val()+$(".editormd-html-textarea").val();
+				alert(content);
+			}
+        </script>
+    </body>
+</html>
