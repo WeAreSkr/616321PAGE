@@ -11,7 +11,8 @@
 	http://www.springframework.org/schema/mvc/spring-mvc-3.0.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd">
 	<!-- 注解驱动 -->
 	<mvc:annotation-driven/>
-
+	<mvc:resources location="/js/" mapping="/js/**"/>
+	<mvc:resources location="/css/" mapping="/css/**"/>
 	<mvc:resources location="/image/" mapping="/image/**"/>
 	<mvc:resources location="/editor.md/" mapping="/editor.md/**"/>
     <!-- 自动扫描包 -->
