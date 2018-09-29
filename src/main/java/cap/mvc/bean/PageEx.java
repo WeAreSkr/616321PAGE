@@ -14,9 +14,9 @@ public class PageEx extends Page {
 
 
     /**
-     * enum {"boy","girl"}
+     * enum {"0","1"}
      */
-    private String sex;
+    private Integer sex;
     public void setPage(Page page) {
         super.setBirthday(page.getBirthday());
         super.setModel(page.getModel());
@@ -54,11 +54,11 @@ public class PageEx extends Page {
         this.desc = desc;
     }
 
-    public String getSex() {
+    public Integer getSex() {
         return sex;
     }
 
-    public void setSex(String sex) {
+    public void setSex(Integer sex) {
         this.sex = sex;
     }
 

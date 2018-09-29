@@ -49,7 +49,8 @@ public class SavaHtml {
      * @return 文件内容
      */
     public static String readHtmlorMd(String name){
-                File file = new File(LocalConfig.getPathPage()+name);
+            File file = new File(LocalConfig.getPathPage()+name);
+            if(!file.exists()) return null;
             String result = "";
             try {
                 InputStreamReader reader = new InputStreamReader(new FileInputStream(file),"UTF-8");
@@ -64,6 +65,7 @@ public class SavaHtml {
             } catch (Exception e) {
                 e.printStackTrace();
             }
+
             return result;
         }
 }

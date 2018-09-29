@@ -30,6 +30,5 @@ ${htmlex}
     <%--<input type="textarea" cols="30" name="msg" rows="30"/><br>--%>
     <input type="submit" value="留言" style="width: 230px;height: 40px;background: #3b7ae3;border-radius:10px;"/>
 </form>
-<a href="/page">edit</a>
 </body>
 </html>
