@@ -83,4 +83,18 @@ public class Classmate {
     public void setHeadImg(String headImg) {
         this.headImg = headImg;
     }
+
+    @Override
+    public String toString() {
+        return "Classmate{" +
+                "stuNmb=" + stuNmb +
+                ", pageId=" + pageId +
+                ", name='" + name + '\'' +
+                ", nickname='" + nickname + '\'' +
+                ", pwd='" + pwd + '\'' +
+                ", dsc='" + dsc + '\'' +
+                ", authority=" + authority +
+                ", headImg='" + headImg + '\'' +
+                '}';
+    }
 }

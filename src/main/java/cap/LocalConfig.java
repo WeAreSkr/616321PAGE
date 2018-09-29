@@ -4,13 +4,15 @@ import java.io.File;
 
 public class LocalConfig {
 
-    public final static String PATH_IMGROOT = "D:/img/";
-    public final static String PATH_USERIMG = "userimg/";
-    public final static String PATH_IMGHEAD = "head/";
-    public final static String PATH_IMGS = "imgs/";
-    public final static String PATH_IMGSEVENT = "eventimgs/";
+    private final static String PATH_IMGROOT = "D:/img/";
+    private final static String PATH_USERIMG = "userimg/";
+    private final static String PATH_IMGHEAD = "head/";
+    private final static String PATH_IMGS = "imgs/";
+    private final static String PATH_IMGSEVENT = "eventimgs/";
 
     public static String noImg= PATH_IMGROOT+"noimg.jpg";
+
+    private final static String PATH_PAGE = "D:/html/";
 
 /**
  *
@@ -40,6 +42,13 @@ public class LocalConfig {
         if(!file.exists()) {
             file.mkdir();
         }
+
+        file = new File(PATH_PAGE);
+        if(!file.exists()) {
+            file.mkdir();
+        }
+        System.out.println("检测文件系统完成");
+
     }
 
     public static String getPathImgUser() {
@@ -54,5 +63,16 @@ public class LocalConfig {
         return PATH_IMGROOT + PATH_IMGS;
     }
 
-    public static String getPathImgsEvent() {return PATH_IMGROOT+PATH_IMGSEVENT; }
+    public static String getPathImgsEvent() {
+        return PATH_IMGROOT+PATH_IMGSEVENT;
+    }
+
+
+
+    /***-------------------------***/
+    public static String getPathPage() {
+        return PATH_PAGE;
+    }
+
+
 }

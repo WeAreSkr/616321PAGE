@@ -9,6 +9,10 @@
 <label>电话:</label>${page.phone}<br/>
 <label>格言:</label>${page.desc}<br/>
 <label>性别:</label>${page.sex}<br>
+<!-- 自定义的页面-->
+<div id="mypage">
+${htmlex}
+</div>
 <form action="/comment" method="post">
     <input type="hidden" name="pageid" value="${page.pageId}">
     <table>

@@ -5,6 +5,7 @@ import cap.mvc.dao.mapper.ClassmateMapper;
 import cap.mvc.dao.mapper.PageMapper;
 import cap.mvc.model.Classmate;
 import cap.mvc.model.Page;
+import cap.util.SavaHtml;
 import com.alibaba.fastjson.JSON;
 import org.springframework.stereotype.Service;
 
@@ -35,4 +36,21 @@ public class PageService {
         else
             return  0;
     }
+
+    public boolean updateMd(Integer stuNmb,String md) {
+        return SavaHtml.savaHtmlorMd(stuNmb+".md",md);
+    }
+
+    public String getMd(Integer stuNmb) {
+        return SavaHtml.readHtmlorMd(stuNmb+".md");
+    }
+
+    public boolean updateHtmlEx(Integer stuNmb,String htmlex) {
+        return SavaHtml.savaHtmlorMd(stuNmb+".html",htmlex);
+    }
+
+    public String getHtmlEx(Integer stuNmb) {
+        return SavaHtml.readHtmlorMd(stuNmb+".html");
+    }
+
 }

@@ -12,8 +12,8 @@
 	<!-- 注解驱动 -->
 	<mvc:annotation-driven/>
 
-	<mvc:resources location="/image" mapping="**"/>
-
+	<mvc:resources location="/image/" mapping="/image/**"/>
+	<mvc:resources location="/editor.md/" mapping="/editor.md/**"/>
     <!-- 自动扫描包 -->
 	<context:component-scan base-package="cap.*" />
 
@@ -34,7 +34,7 @@
 		</mvc:interceptor>
 		<mvc:interceptor>
 			<mvc:mapping path="/authority/1/*"/>
-			<bean class="cap.interceptor.LoginInterceptor"></bean>
+			<bean class="cap.interceptor.AuthorityInterceptor"></bean>
 		</mvc:interceptor>
 	</mvc:interceptors>
 

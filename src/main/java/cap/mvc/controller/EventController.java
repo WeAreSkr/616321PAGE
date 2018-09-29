@@ -2,6 +2,7 @@ package cap.mvc.controller;
 
 import cap.LocalConfig;
 import cap.mvc.bean.Msg;
+import cap.mvc.model.Classmate;
 import cap.mvc.model.Event;
 import cap.mvc.service.EventService;
 import cap.util.FileName;
@@ -15,6 +16,8 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
@@ -58,8 +61,11 @@ public class EventController {
     }
 
     @RequestMapping(value = "/authority/0/addevent",method = RequestMethod.GET)
-    public String addEvent(Model model ,Event event){
-        event.setEditor("LiuBailin");
+    public String addEvent(Model model , Event event, HttpServletRequest request, HttpServletResponse response){
+        Classmate classmate = (Classmate) request.getSession().getAttribute("user");
+        if(classmate != null) {
+            event.setEditor(classmate.getName());
+        }
         model.addAttribute("event",event);
         return "addevent";
     }

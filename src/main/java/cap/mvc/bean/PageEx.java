@@ -12,6 +12,7 @@ public class PageEx extends Page {
     private String phone;
     private String desc;
 
+
     /**
      * enum {"boy","girl"}
      */
@@ -67,6 +68,7 @@ public class PageEx extends Page {
                 "qq='" + qq + '\'' +
                 ", phone='" + phone + '\'' +
                 ", desc='" + desc + '\'' +
+                ", sex='" + sex + '\'' +
                 "} " + super.toString();
     }
 }

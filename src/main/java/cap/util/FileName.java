@@ -4,18 +4,21 @@ import java.io.File;
 import java.util.Random;
 
 public class FileName{
+
     /**
      * 获得一个合适的文件名
-     * @param path
-     * @param suffix
+     * @param path 目录 的绝对路径 如 "c:/abc/" 返回 最后一个'/'不能少
+     * @param suffix 扩展名  如 .jpg   '.'不能少
      * @return
+     * null  不能得到相应的文件名
+     * String 文件名
      */
     public static String getSuitableName(String path,String suffix) {
         String name = null;
         File file = null;
         for (int i = 0; i < 10; i++) {
-            name = getRandomString(7) + suffix;;
-            file = new File(path + getRandomString(7) + suffix);
+            name = getRandomString(12) + suffix;
+            file = new File(path + name);
             if (!file.exists())
                 break;
             else
@@ -24,6 +27,11 @@ public class FileName{
         return name;
     }
 
+    /**
+     * 返回一个长度为length的随机字符串
+     * @param length
+     * @return
+     */
     public static String getRandomString(int length){
         String str="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
         Random random=new Random();
@@ -37,8 +45,8 @@ public class FileName{
 
     /**
      * 合并字符串
-     * @param strs
-     * @return
+     * 中间加上 |
+     * 如: ["abc","efg"] 和并为 "abc|efg"
      */
     public static String  mgStr(String[] strs) {
         String result = "";
@@ -55,9 +63,8 @@ public class FileName{
     }
 
     /**
-     * 分开字符串
-     * @param strfiles
-     * @return
+     * 把字符串以 '|'分开
+     * 如 "abc|defg" 分为 ["abc","defg"]
      */
     public static String[] divStr(String strfiles) {
        return strfiles == null ? null :strfiles.split("[|]");

@@ -32,23 +32,28 @@ private UserService userService;
             }
 
             model.addAttribute("page",pageService.findPageExByStuNmb(classmate.getStuNmb()));
+            model.addAttribute("md",pageService.getMd(classmate.getStuNmb()));
             return "pagemodel/def.edit";
         }else{
                 model.addAttribute("page",pageService.findPageExByStuNmb(stuNmb));
                 model.addAttribute("tmpuser",userService.selectTmpbyKey(stuNmb));
+                model.addAttribute("htmlex",pageService.getHtmlEx(stuNmb));
                 return "pagemodel/def";
-            }
+        }
     }
 
     @RequestMapping(value = "page",method = RequestMethod.POST)
-    public String page(Model model,PageEx pageEx, HttpServletRequest request){
+    public String page(Model model,PageEx pageEx,@RequestParam("htmlex") String htmlex,@RequestParam("md") String md, HttpServletRequest request){
         Msg msg = new Msg();
         msg.setCode(0);
         msg.setRedirect("/");
         msg.setTitle("编辑主页");
         msg.setMsg("更新成功");
         model.addAttribute("msg",msg);
-        pageService.updatePageEx(pageEx, (Classmate) request.getSession().getAttribute("user"));
+        Classmate classmate = (Classmate) request.getSession().getAttribute("user");
+        pageService.updatePageEx(pageEx,classmate);
+        pageService.updateHtmlEx(classmate.getStuNmb(),htmlex);
+        pageService.updateMd(classmate.getStuNmb(),md);
         return "result";
     }
 }

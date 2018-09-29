@@ -231,66 +231,8 @@
                                 </figcaption>
                             </figure>
                         </div>
-                        <div class="grid-item">
-                            <figure class="effect-bubba">
-                                <img src="/image/tm-img-11-tn.jpg" alt="Image" class="img-fluid tm-img">
-                                <figcaption>
-                                    <h2 class="tm-figure-title">Image <span>Eleven</span></h2>
-                                    <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <a href="/image/tm-img-11.jpg">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item">
-                            <figure class="effect-bubba">
-                                <img src="/image/tm-img-12-tn.jpg" alt="Image" class="img-fluid tm-img">
-                                <figcaption>
-                                    <h2 class="tm-figure-title">Image <span>Twelve</span></h2>
-                                    <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                    <a href="/image/tm-img-12.jpg">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item">
-                            <figure class="effect-bubba">
-                                <img src="/image/tm-img-13-tn.jpg" alt="Image" class="img-fluid tm-img">
-                                <figcaption>
-                                    <h2 class="tm-figure-title">Image <span>Thirteen</span></h2>
-                                    <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <a href="/image/tm-img-13.jpg">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item">
-                            <figure class="effect-bubba">
-                                <img src="/image/tm-img-14-tn.jpg" alt="Image" class="img-fluid tm-img">
-                                <figcaption>
-                                    <h2 class="tm-figure-title">Image <span>Fourteen</span></h2>
-                                    <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                    <a href="/image/tm-img-14.jpg">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item">
-                            <figure class="effect-bubba">
-                                <img src="/image/tm-img-15-tn.jpg" alt="Image" class="img-fluid tm-img">
-                                <figcaption>
-                                    <h2 class="tm-figure-title">Image <span>Fifteen</span></h2>
-                                    <p class="tm-figure-description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <a href="/image/tm-img-15.jpg">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
-                        <div class="grid-item">
-                            <figure class="effect-bubba">
-                                <img src="/image/tm-img-16-tn.jpg" alt="Image" class="img-fluid tm-img">
-                                <figcaption>
-                                    <h2 class="tm-figure-title">Image <span>Sixteen</span></h2>
-                                    <p class="tm-figure-description">Maecenas purus sem, lobortis id odio in sapien.</p>
-                                    <a href="/image/tm-img-16.jpg">View more</a>
-                                </figcaption>
-                            </figure>
-                        </div>
+
+
                     </div>
                 </div>
             </div>

@@ -3,6 +3,7 @@ package cap.util;
 import java.security.MessageDigest;
 
 public class MD5 {
+
     public static String md5(String s) {
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
