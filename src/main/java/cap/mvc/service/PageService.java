@@ -18,7 +18,8 @@ public class PageService {
     @Resource
     private ClassmateMapper classmateMapper;
 
-    public PageEx findPageExByStuNmb(int stuNmb){
+
+    public PageEx findPageExByStuNmb(Integer stuNmb){
         Classmate classmate = classmateMapper.selectByPrimaryKey(stuNmb);
         if(classmate == null) return  null;
         Long  pageId = classmate.getPageId();
@@ -52,5 +53,7 @@ public class PageService {
     public String getHtmlEx(Integer stuNmb) {
         return SavaHtml.readHtmlorMd(stuNmb+".html");
     }
+
+
 
 }

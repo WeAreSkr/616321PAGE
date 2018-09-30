@@ -9,6 +9,14 @@ public class Comment {
 
     private String msg;
 
+    private Classmate classmate;
+    public Classmate getClassmate() {
+        return classmate;
+    }
+
+    public void setClassmate(Classmate classmate) {
+        this.classmate = classmate;
+    }
     public Long getCommId() {
         return commId;
     }

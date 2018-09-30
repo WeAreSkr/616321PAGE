@@ -23,7 +23,7 @@
     <div for="codeinput" class="block">
     <h2>${event.formatDt}</h2><br/>
             <c:forEach items="${event.divPath}" var="path" >
-                <img src="/img/eventimg/${path}"/>
+                <img src="/img/eventimg/${path}.jpg"/>
             </c:forEach>
             <br/>
             标题：${event.title}<br/>

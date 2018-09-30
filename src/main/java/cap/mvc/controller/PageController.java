@@ -3,6 +3,7 @@ package cap.mvc.controller;
 import cap.mvc.bean.Msg;
 import cap.mvc.bean.PageEx;
 import cap.mvc.model.Classmate;
+import cap.mvc.service.CommentService;
 import cap.mvc.service.PageService;
 import cap.mvc.service.UserService;
 import org.springframework.stereotype.Controller;
@@ -21,6 +22,9 @@ public class PageController {
 private PageService pageService;
 @Resource
 private UserService userService;
+@Resource
+private CommentService commentService;
+
     @RequestMapping(value = "page",method = RequestMethod.GET)
     public  String page(Model model, @RequestParam(value = "stunmb",required = false) Integer stuNmb, HttpServletRequest request) {
         if(stuNmb == null ) {
@@ -30,11 +34,13 @@ private UserService userService;
                 model.addAttribute("msg",new Msg("edit page",1,"没有权限修改"));
                 return "result";
             }
-
-            model.addAttribute("page",pageService.findPageExByStuNmb(classmate.getStuNmb()));
+            PageEx pageEx = pageService.findPageExByStuNmb(classmate.getStuNmb());
+            model.addAttribute("page",pageEx);
             model.addAttribute("md",pageService.getMd(classmate.getStuNmb()));
             return "pagemodel/def.edit";
         }else{
+                PageEx pageEx = pageService.findPageExByStuNmb(stuNmb);
+                model.addAttribute("comments",commentService.findCommentByPage(pageEx.getPageId()));
                 model.addAttribute("page",pageService.findPageExByStuNmb(stuNmb));
                 model.addAttribute("tmpuser",userService.selectTmpbyKey(stuNmb));
                 model.addAttribute("htmlex",pageService.getHtmlEx(stuNmb));
