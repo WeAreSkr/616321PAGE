@@ -2,6 +2,9 @@ package cap.mvc.dao.mapper;
 
 import cap.mvc.model.Images;
 
+import java.util.List;
+
+
 public interface ImagesMapper {
     int deleteByPrimaryKey(Integer id);
 
@@ -14,4 +17,6 @@ public interface ImagesMapper {
     int updateByPrimaryKeySelective(Images record);
 
     int updateByPrimaryKey(Images record);
+
+    List<Images> findAll();
 }

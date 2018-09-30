@@ -15,11 +15,19 @@
     STU_NMB, PAGE_ID, NAME, NICKNAME, PWD, DSC, AUTHORITY, HEAD_IMG
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
-    select 
+    select
     <include refid="Base_Column_List" />
     from classmate
     where STU_NMB = #{stuNmb,jdbcType=DECIMAL}
+
   </select>
+  <select id="findActClassmate" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from classmate
+    where PWD is NOT  NULL ;
+  </select>
+
   <select id="findNoPwdNames" resultType="String">
     select
     NAME,PWD

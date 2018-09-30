@@ -54,4 +54,8 @@ public class UserService {
         classmate.setPwd("");
         return  classmate;
     }
+
+    public List<Classmate> findAll() {
+        return  classmateMapper.findActClassmate();
+    }
 }

@@ -58,4 +58,9 @@ public class UserController {
         String url = request.getServletPath();
         return "redirect:/tree";
     }
+    @RequestMapping(value = "classmates",method = RequestMethod.GET)
+    public String classamtes(Model model){
+        model.addAttribute("classmates",service.findAll());
+        return "classmates";
+    }
 }

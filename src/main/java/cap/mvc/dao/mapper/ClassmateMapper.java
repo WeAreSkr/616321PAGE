@@ -20,4 +20,6 @@ public interface ClassmateMapper {
     List<String> findNoPwdNames();
 
     int addPwd(Classmate pwd);
+
+    List<Classmate> findActClassmate();
 }
