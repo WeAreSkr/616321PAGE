@@ -111,9 +111,13 @@
                 <div class="timeline__item__content">
                     <h2 class="timeline__item__content__date">${event.formatDt}</h2>
                     <br/>
-                    <c:forEach items="${event.divPath}" var="path" >
-                      <img src="img/eventimg/${path}"/>
-                    </c:forEach>
+
+                        <c:forEach items="${event.divPath}" var="path" >
+                            <a   target="_blank"  href="/img/eventimg/${path}">
+                          <img src="/img/eventimg/${path}.jpg"/>
+                            </a>
+                        </c:forEach>
+
                     <p class="timeline__item__content__description">${event.title}<br/>${event.content}</p>
                 </div>
             </div>

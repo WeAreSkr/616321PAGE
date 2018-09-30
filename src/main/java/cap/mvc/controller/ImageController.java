@@ -9,7 +9,7 @@ import org.springframework.web.servlet.ModelAndView;
 @RequestMapping("/")
 public class ImageController {
     @RequestMapping(value = "photo",method = RequestMethod.GET)
-    public ModelAndView login() {
+    public ModelAndView photo() {
         return new ModelAndView("photo");
     }
 

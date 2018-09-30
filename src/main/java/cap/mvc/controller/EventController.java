@@ -6,6 +6,7 @@ import cap.mvc.model.Classmate;
 import cap.mvc.model.Event;
 import cap.mvc.service.EventService;
 import cap.util.FileName;
+import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -47,7 +48,9 @@ public class EventController {
                 fileNames[i] =null; //如果为null就不保存
             }  else{
                 File targetFile = new File(LocalConfig.getPathImgsEvent() + fileNames[i]);
+                File targetFileScale = new File(LocalConfig.getPathImgsEvent() + fileNames[i]+".jpg");
                 try {
+                    Thumbnails.of(files[i].getInputStream()).size(320,240).toFile(targetFileScale);
                     files[i].transferTo(targetFile);
                 } catch (IOException e) {
                     e.printStackTrace();

@@ -4,18 +4,14 @@
 <html>
 <head>
     <title>Addevent</title>
+    <script src="/js/jquery.min.js"></script>
     <style>
         .error {
             color: #ff0000;
         }
-        .errorblock {
-            color: #000;
-            background-color: #ffEEEE;
-            border: 3px solid #ff0000;
-            padding: 8px;
-            margin: 16px;
-        }
+
     </style>
+
 </head>
 <body>
 <s:form action="addevent" method="post" modelAttribute="event" enctype="multipart/form-data">
@@ -34,9 +30,13 @@
             <td><s:input path="editor" /><s:errors path="editor" cssClass="error"></s:errors></td>
         </tr>
         <tr>
-            <td>Img:</td>
+            <td>Imgs:</td>
             <td>
-                <input type="file" name="imgs"> <br/>
+
+                <div id="imgselect">
+
+                </div>
+
             </td>
         </tr>
 
@@ -47,7 +47,13 @@
         </tr>
     </table>
 </s:form>
-
+<button onclick="addimgs()">添加图片</button>
+<script>
+    function  addimgs() {
+        var imgselect = $("#imgselect");
+        imgselect.append(" <input type=\"file\" name=\"imgs\"> <br/>");
+    }
+</script>
 
 </body>
 </html>
