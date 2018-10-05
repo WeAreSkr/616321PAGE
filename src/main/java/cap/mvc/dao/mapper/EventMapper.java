@@ -19,4 +19,5 @@ public interface EventMapper {
 
     ArrayList<Event> selectPass();
     ArrayList<Event> selectNoPass();
+    ArrayList<Event> selectNoDel();
 }

@@ -3,8 +3,10 @@
 <head>
     <script src="/js/jquery.min.js"></script>
     <title>添加班级相册</title>
+    <jsp:include page="../../head.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="../../head.jsp"></jsp:include>
 <form action="/authority/1/addimgs" method="post" enctype="multipart/form-data">
     <p>描述：</p><input type="text" name="dsc">
 

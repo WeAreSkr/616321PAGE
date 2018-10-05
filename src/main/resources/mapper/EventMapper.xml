@@ -37,6 +37,14 @@
     ORDER  BY DT DESC
   </select>
 
+
+  <select id="selectNoDel" resultType="EVENT">
+    select
+    <include refid="Base_Column_List" />
+    from event
+    WHERE ispass &lt;&gt; -1
+    ORDER  BY DT DESC
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from event
     where CODE = #{code,jdbcType=INTEGER}

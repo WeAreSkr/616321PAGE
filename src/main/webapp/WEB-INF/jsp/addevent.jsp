@@ -4,48 +4,71 @@
 <html>
 <head>
     <title>Addevent</title>
-    <script src="/js/jquery.min.js"></script>
     <style>
         .error {
             color: #ff0000;
         }
+        .input_text{
+            border-left: solid black 2px;
+            border-top: solid black 2px;
+            border-radius: 5px;
+        }
 
+        .opearator {
+            width: 100px;
+            height: 100px;
+            position: fixed;
+            top: 100px;
+            left: 100%;
+            margin-left: -100px;
+            z-index: 100;
+        }
+
+        .map_item .name{
+            display: inline-block;
+            width: 120px;
+        }
+
+        #baseinfo{
+            position: relative;
+            width: 100%
+        }
+        .divline{
+            text-align: center;
+            height: 32px;
+            width: 100%;
+            background-color: #1d75b3;
+            line-height: 32px;
+            border-bottom: inset green 2px;
+        }
     </style>
-
+    <jsp:include page="head.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="navigation.jsp"></jsp:include>
 <s:form action="addevent" method="post" modelAttribute="event" enctype="multipart/form-data">
-    <table>
-        <tr>
-            <td>title:</td>
-            <td> <s:input path="title"/><s:errors path="title" cssClass="error"></s:errors></td>
-
-        </tr>
-        <tr>
-            <td>content:</td>
-            <td><s:textarea path="content" cols="20" rows="10"/><s:errors path="content" cssClass="error"></s:errors></td>
-        </tr>
-        <tr>
-            <td>edit:</td>
-            <td><s:input path="editor" /><s:errors path="editor" cssClass="error"></s:errors></td>
-        </tr>
-        <tr>
-            <td>Imgs:</td>
-            <td>
+<div class="map_item">
+    <label class="name">
+        标题:</label>
+            <s:input path="title"/><s:errors path="title" cssClass="error"></s:errors>
+    </div>
+    <div class="map_item">
+        <label class="name">
+            内容:</label>
+            <s:textarea  path="content" cols="20" rows="10"/><s:errors path="content" cssClass="error"></s:errors>
+    </div>
+    <div class="map_item">
+        <label class="name">编辑：</label>
+            <s:input path="editor" /><s:errors path="editor" cssClass="error"></s:errors>
+    </div>
+     Imgs:
 
                 <div id="imgselect">
 
                 </div>
 
-            </td>
-        </tr>
-
-        <tr>
-            <td colspan="2">
                 <input type="submit" value="提交"/>
-            </td>
-        </tr>
-    </table>
+
 </s:form>
 <button onclick="addimgs()">添加图片</button>
 <script>

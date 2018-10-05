@@ -55,11 +55,13 @@ private CommentService commentService;
         msg.setRedirect("/");
         msg.setTitle("编辑主页");
         msg.setMsg("更新成功");
-        model.addAttribute("msg",msg);
+
         Classmate classmate = (Classmate) request.getSession().getAttribute("user");
         pageService.updatePageEx(pageEx,classmate);
         pageService.updateHtmlEx(classmate.getStuNmb(),htmlex);
         pageService.updateMd(classmate.getStuNmb(),md);
+        msg.setRedirect("/page?stunmb="+classmate.getStuNmb());
+        model.addAttribute("msg",msg);
         return "result";
     }
 }

@@ -4,7 +4,7 @@ import java.io.File;
 
 public class LocalConfig {
 
-    private final static String PATH_IMGROOT = "D:/img/";
+    private final static String PATH_IMGROOT = "/home/liubailin/img/";
     private final static String PATH_USERIMG = "userimg/";
     private final static String PATH_IMGHEAD = "head/";
     private final static String PATH_IMGS = "imgs/";
@@ -12,7 +12,7 @@ public class LocalConfig {
 
     public static String noImg= PATH_IMGROOT+"noimg.jpg";
 
-    private final static String PATH_PAGE = "D:/html/";
+    private final static String PATH_PAGE = "/home/liubailin/html/";
 
 /**
  *

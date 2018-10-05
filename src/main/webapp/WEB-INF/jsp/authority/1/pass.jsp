@@ -3,6 +3,7 @@
 <html>
 <head>
     <title>审核班级志事件</title>
+    <jsp:include page="../../head.jsp"></jsp:include>
     <style>
         .block {
             color: #000;
@@ -15,8 +16,10 @@
             float: right;
         }
     </style>
+    <jsp:include page="../../head.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="../../head.jsp"></jsp:include>
 <form name="/authority/1/pass" method="post">
 <h1>请选择通过的事件</h1>
 <c:forEach items="${nopassevents}" var = "event"  varStatus="statu">
@@ -30,10 +33,40 @@
             内容：${event.content}<br/>
             编辑：${event.editor}<br/>
             提交： ${event.stuNmb}
-    <input id="codeinput" class="right" type="checkbox" name="code" value="${event.code}"/>
+        on ${event.dt}
+
+        <label for="cid${event.code}">删除</label><input  id="cid${event.code}"  type="checkbox" name="code" value="'code${event.code}':'-1'"/>
+        <label for="dcid${event.code}">通过</label><input <c:if test="${event.ispass==1}">checked</c:if>  id="dcid${event.code}"  type="checkbox" name="code" value="'code${event.code}':'1'"/>
+        <label for="pcid${event.code}">不通过</label><input <c:if test="${event.ispass==0}">checked</c:if> id="pcid${event.code}"  type="checkbox" name="code" value="'code${event.code}':'0'"/>
+        <script>
+
+                $("#cid${event.code}").click(function(){
+                        $(this).attr("checked","false");
+                        $("#dcid${event.code}").removeAttr('checked');
+                        $("#pcid${event.code}").removeAttr('checked');
+
+                });
+
+                $("#dcid${event.code}").click(function(){
+
+                        $("#cid${event.code}").removeAttr("checked");
+                        $("#pcid${event.code}").removeAttr("checked");
+
+                });
+                $("#pcid${event.code}").click(function(){
+
+                        $("#dcid${event.code}").removeAttr("checked");
+                        $("#cid${event.code}").removeAttr("checked");
+
+                });
+
+
+
+        </script>
     </div>
 </c:forEach>
     <input class="right" type="submit" value="确定" >
 </form>
+
 </body>
 </html>

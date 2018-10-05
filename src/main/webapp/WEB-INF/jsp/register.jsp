@@ -4,21 +4,30 @@
 <html>
 <head>
     <title>register</title>
+    <link rel="stylesheet" href="/css/input.css">
+    <jsp:include page="head.jsp"></jsp:include>
 </head>
 <body>
+<jsp:include page="navigation.jsp"></jsp:include>
 <form action="register" method="post">
-    <p>Note: 请放心设置任何密码，后台使用md加密，数据管理员是无法查看您的密码！但我无法保证连接服务器时不被人拦截掉</p>
-    Name:
-<select name="name">
+    <div class="__center" >
+        <div class="map_item">
+            <label class="name">名字: </label>     <select name="name">
+            <c:forEach items="${names}" var="name">
+                <option value="${name}">${name}</option>
+            </c:forEach>
+        </select>
+        </div>
 
-    <c:forEach items="${names}" var="name">
-        <option value="${name}">${name}</option>
-    </c:forEach>
-</select>
-    stuNmb: <input type="text" name="stuNmb"/>
-    pwd<input type="password" name="pwd"/>
-    repwd<input type="password" name="rePwd"/>
-    <input type="submit" value="register"/>
+        <div class="map_item">
+            <label class="name"> 学号:  </label>  <input  class="input_text" type="text" name="stuNmb"/></div>
+        <div class="map_item">
+            <label class="name">密码：</label>    <input class="input_text" type="password" name="pwd"/>  </div>
+        <div class="map_item">
+            <label class="name">确认密码：</label> <input class="input_text" type="password" name="rePwd"/>  </div>
+
+    <input type="submit" value="注册"/>
+    </div>
 </form>
 </body>
 </html>

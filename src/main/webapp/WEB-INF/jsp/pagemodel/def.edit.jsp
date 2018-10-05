@@ -2,36 +2,35 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <link rel="stylesheet" href="/css/input.css">
 
+<jsp:include page="../head.jsp"></jsp:include>
     <link rel="stylesheet" href="/editor.md/css/editormd.css" />
-    <title>${user.name}的主页</title>
+    <title>编辑${user.name}的主页</title>
 </head>
 <body>
+<jsp:include page="../navigation.jsp"></jsp:include>
+<div class="divline">
+    基本信息编辑区
+</div>
 <form action="/page" method="post" >
-    <table>
-        <input type="hidden" name="pageId" value="${page.pageId}">
-
-<tr>
-   <td>qq:<br/> </td> <td><input type="text" name="qq" value="${page.qq}"></td>
-</tr>
-        <tr>
-            <td>desc: </td> <td>  <textarea name="desc"  cols="22" rows="7" warp="virtual">${page.desc}</textarea></td>
-        </tr>
-        <tr>
-            <td>  phone:</td> <td> <input type="text" name="phone" value="${page.phone}"> </td>
-        </tr>
-        <tr>
-            <td> sex:</td> <td>
-            <input type="radio" name="sex" value="0" <c:if test="${page.sex==0}">checked</c:if> />boy
-            <input type="radio" name="sex" value="1"<c:if test="${page.sex==1}">checked</c:if> />gril
-            </td>
-        </tr>
-
-    </table>
-
-
-
-
+    <div class="opearator" >
+    <input type="submit" style="background-color: #1d75b3" value="保存"></div>
+        <input type="hidden" name="pageId" value="${page.pageId}"/>
+    <div id="baseinfo">
+        <div class="map_item">
+        <label class="name">qq: </label>       <input class="input_text" type="text" name="qq" value="${page.qq}"/></div>
+        <div class="map_item">
+            <label class="name">电话号码:</label>  <input class="input_text" type="text" name="phone" value="${page.phone}"/></div>
+        <div class="map_item">
+            <label class="name">男孩还是女孩：</label>
+            <input type="radio" name="sex" id="sex0" value="0" <c:if test="${page.sex==0}">checked</c:if> /> <label for="sex0">boy</label>
+            <input type="radio" name="sex" id="sex1" value="1"<c:if test="${page.sex==1}">checked</c:if> /> <label for="sex1">girl</label>
+        </div>
+    </div>
+<div class="divline">
+自定义页面编辑区
+</div>
     <div class="editormd" id="test-editormd">
     <textarea class="editormd-markdown-textarea" name="md"><c:if test="${md==null}">
 ## 说明
@@ -53,7 +52,7 @@
 
         $(function() {
             testEditor = editormd("test-editormd", {
-                width   : "90%",
+                width   : "100%",
                 height  : 640,
                 saveHTMLToTextarea: true,
                 syncScrolling : "single",
@@ -67,9 +66,6 @@
             alert(content);
         }
     </script>
-
-
-        <input type="submit" value="submit">
 
 </form>
 </body>

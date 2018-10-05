@@ -1,0 +1,42 @@
+
+.input_text{
+    border-left: solid black 2px;
+    border-top: solid black 2px;
+    border-radius: 5px;
+}
+
+.opearator {
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    top: 100px;
+    left: 100%;
+    margin-left: -100px;
+    z-index: 100;
+}
+
+.__center{
+    width: 50%;
+    margin-left: -25%;
+    position: fixed;
+    left: 50%;
+}
+
+.map_item .name{
+    display: inline-block;
+    width: 120px;
+}
+
+#baseinfo{
+    position: relative;
+    width: 100%
+}
+.divline{
+    text-align: center;
+    height: 32px;
+    width: 100%;
+    background-color: #1d75b3;
+    line-height: 32px;
+    border-bottom: inset green 2px;
+}
+

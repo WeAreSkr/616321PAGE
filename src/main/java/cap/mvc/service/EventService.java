@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 @Service
 public class EventService {
@@ -25,20 +26,15 @@ public class EventService {
     public ArrayList<Event> getNoPassEvents() {
         return eventMapper.selectNoPass();
     }
+    public ArrayList<Event> getAllEvents() {
+        return eventMapper.selectNoDel();
+    }
 
-    public int setPass(Integer[] code){
-        if(code == null) return  0;
-        Event event = new Event();
-        int count = 0;
-        for(int i= 0; i< code.length;i++) {
-            event.setCode(code[i]);
-            event.setIspass(1);
-            eventMapper.updateByPrimaryKeySelective(event);
-                event.setCode(null);
-                event.setIspass(null);
-            count ++;
-        }
-        return  count;
+    public int setPass(List<Event> eventList){
+       int count  = 0;
+       for(Event event:eventList)
+           count += eventMapper.updateByPrimaryKeySelective(event);
+       return  count;
     }
 
 }

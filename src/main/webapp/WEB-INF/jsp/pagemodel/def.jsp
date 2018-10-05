@@ -11,7 +11,10 @@
 </style>
     <link href="/css/makedown.css" rel="stylesheet" />
     <title>${tmpuser.name}的主页</title>
+
 </head>
+<body>
+
 <img src="/img/head/${tmpuser.headImg}"></br>
 <label>QQ:</label>${page.qq}<br/>
 <label>电话:</label>${page.phone}<br/>
@@ -23,6 +26,8 @@ ${htmlex}
 </div>
 <h3 style="position: center">留言栏</h3>
 <c:forEach items="${comments}" var="comment">
+    <c:if test="${comment.classmate.authority == 1}" > <label style="background: #00FF00"> 班长留言</label></c:if>
+    <c:if test="${comment.classmate.authority == 100}" > <label style="background: #9c3328;color: #b2dba1" > 辅导员</label></c:if>
     <p><a href="/page?stunmb=${comment.classmate.stuNmb}"> ${comment.classmate.name}</a>:${comment.msg}</p>
     <c:if test="${user.stuNmb == comment.classmate.stuNmb}">
         <a href="/authority/0/delcomment?tmpStuNmb=${tmpuser.stuNmb}&commentId=${comment.commId}">删除</a>
