@@ -15,10 +15,10 @@
 </head>
 <body>
 
-<img src="/img/head/${tmpuser.headImg}"></br>
-<label>QQ:</label>${page.qq}<br/>
-<label>电话:</label>${page.phone}<br/>
-<label>格言:</label>${page.desc}<br/>
+<img  style="border-radius: 50%;width: 100px;height: 100px;"  src="/img/head/${tmpuser.headImg}"></br>
+<label>QQ:</label><c:if test="${user==null}">****</c:if><c:if test="${user!=null}">${page.qq}</c:if><br/>
+<label>电话:</label><c:if test="${user==null}">****</c:if><c:if test="${user!=null}">${page.phone}</c:if><br/>
+<label>个性签名:</label>${tmpuser.dsc}<br/>
 <label>性别:</label><c:if test="${page.sex == 1}">女</c:if><c:if test="${page.sex ==0}">男</c:if><br>
 <!-- 自定义的页面-->
 <div id="mypage">
@@ -37,7 +37,7 @@ ${htmlex}
 
 <form action="/authority/0/addcomment" method="post">
     <input type="hidden" name="pageId" value="${page.pageId}">
-    <input type="hidden" name="stuNmb" value="${user.stuNmb}"> <!-- 当前登录的用户 -->
+    <input type="hidden" name="stuNmb" value="${user.stuNmb}">
     <input type="hidden" name="tmpStuNmb" value="${tmpuser.stuNmb}">
     <table>
 

@@ -1,4 +1,4 @@
-package cap.test;
+package test;
 import cap.util.FileName;
 import org.junit.jupiter.api.Test;
 

@@ -1,9 +1,11 @@
 package cap.mvc.dao.mapper;
 
 import cap.mvc.model.Images;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+@Repository
 
 public interface ImagesMapper {
     int deleteByPrimaryKey(Integer id);

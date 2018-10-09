@@ -7,13 +7,14 @@
 
 .opearator {
     width: 100px;
-    height: 100px;
+    height: 50px;
     position: fixed;
-    top: 100px;
+    top: 50px;
     left: 100%;
     margin-left: -100px;
     z-index: 100;
 }
+
 
 .__center{
     width: 50%;
@@ -29,6 +30,7 @@
 
 #baseinfo{
     position: relative;
+    border: #00a8c6 solid 5px;
     width: 100%
 }
 .divline{

@@ -4,7 +4,7 @@ import java.io.File;
 
 public class LocalConfig {
 
-    private final static String PATH_IMGROOT = "/home/liubailin/img/";
+    private static String PATH_IMGROOT = null;
     private final static String PATH_USERIMG = "userimg/";
     private final static String PATH_IMGHEAD = "head/";
     private final static String PATH_IMGS = "imgs/";
@@ -12,13 +12,25 @@ public class LocalConfig {
 
     public static String noImg= PATH_IMGROOT+"noimg.jpg";
 
-    private final static String PATH_PAGE = "/home/liubailin/html/";
+    private static String PATH_PAGE = null;
+
 
 /**
  *
  * 创建相应的目录
  */
     static {
+
+        String os = System.getProperty("os.name");
+        if(os.toLowerCase().startsWith("win")){
+            PATH_IMGROOT = "D:/img/";
+            PATH_PAGE = "D:/html/";
+        }else {
+            PATH_IMGROOT = "/home/liubailin/img/";
+            PATH_PAGE = "/home/liubailin/html/";
+        }
+
+
         File file = new File(PATH_IMGROOT);
         if(!file.exists()) {
             file.mkdir();

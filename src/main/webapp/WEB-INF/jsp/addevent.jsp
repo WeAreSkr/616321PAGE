@@ -69,6 +69,26 @@
 
                 <input type="submit" value="提交"/>
 
+
+    <table>
+        <tr><td align="right">事件日期:  </td><td>
+
+            <div id="box">
+                <select name="year" id="sel1">
+                    <option value="year">年</option>
+                </select>
+                <select name="month" id="sel2">
+                    <option value="month">月</option>
+                </select>
+                <select name="day" id="sel3">
+                    <option value="day">日</option>
+                </select>
+                <span id="result"></span>
+            </div></td></tr>
+    </table>
+    <script src="/js/dateselector.js"></script>
+
+
 </s:form>
 <button onclick="addimgs()">添加图片</button>
 <script>

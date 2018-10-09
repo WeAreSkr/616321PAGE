@@ -21,7 +21,7 @@
     where CODE = #{code,jdbcType=INTEGER}
   </select>
 
-  <select id="selectPass" resultType="EVENT">
+  <select id="selectPass" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from event
@@ -29,7 +29,7 @@
     ORDER  BY DT DESC
   </select>
 
-  <select id="selectNoPass" resultType="EVENT">
+  <select id="selectNoPass" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from event
@@ -38,7 +38,7 @@
   </select>
 
 
-  <select id="selectNoDel" resultType="EVENT">
+  <select id="selectNoDel" resultMap="BaseResultMap">
     select
     <include refid="Base_Column_List" />
     from event

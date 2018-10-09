@@ -33,7 +33,11 @@ public class EventController {
     public EventService eventService;
 
     @RequestMapping(value = "/authority/0/addevent",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
-    public ModelAndView addEvent(@Valid Event event, BindingResult result, @RequestParam(value = "imgs", required = false) MultipartFile[] files) {
+    public ModelAndView addEvent(@Valid Event event, BindingResult result,
+                                 @RequestParam("year") int year,
+                                 @RequestParam("month") int month,
+                                 @RequestParam("day") int day ,
+                                 @RequestParam(value = "imgs", required = false) MultipartFile[] files) {
         if(result.hasErrors()) {
             return new ModelAndView("addevent");
         }
@@ -42,6 +46,7 @@ public class EventController {
         Msg msg = new Msg("上传文件",0,"");
         String[] fileNames = null;
         int count = 0;
+
         if(files != null) {
             fileNames = new String[files.length];
             for (int i = 0; i < files.length; i++) {
@@ -64,9 +69,10 @@ public class EventController {
                 }
             }
         }
+
         msg.setMsg("上传图片："+count+"张");
         event.setImgagesPath(FileName.mgStr(fileNames));
-        eventService.addEvent(event);
+        eventService.addEvent(event,year,month,day);
         modelAndView.addObject("msg",msg);
         return modelAndView;
     }

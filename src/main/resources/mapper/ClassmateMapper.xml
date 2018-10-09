@@ -27,6 +27,11 @@
     from classmate
     where PWD is NOT  NULL ;
   </select>
+  <select id="findAllClassmate" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from classmate ORDER BY PWD DESC ;
+  </select>
 
   <select id="findNoPwdNames" resultType="String">
     select

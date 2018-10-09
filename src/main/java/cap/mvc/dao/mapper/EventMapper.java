@@ -1,8 +1,10 @@
 package cap.mvc.dao.mapper;
 
 import cap.mvc.model.Event;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
+@Repository
 
 public interface EventMapper {
     int deleteByPrimaryKey(Integer code);

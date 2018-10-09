@@ -56,6 +56,28 @@ public class UserService {
     }
 
     public List<Classmate> findAll() {
-        return  classmateMapper.findActClassmate();
+        List<Classmate> classmates =  classmateMapper.findAllClassmate();
+        for(Classmate classmate : classmates){
+            if( classmate.getPwd() != null) {
+                classmate.setPwd("balabala");
+            }
+        }
+        return classmates ;
     }
+
+
+    public int updateHead(Integer stuNmb,String filename) {
+        Classmate classmate = new Classmate();
+        classmate.setStuNmb(stuNmb);
+        classmate.setHeadImg(filename);
+        return classmateMapper.updateByPrimaryKeySelective(classmate);
+    }
+
+    public int updateDesc(Integer stuNmb,String desc) {
+        Classmate classmate = new Classmate();
+        classmate.setStuNmb(stuNmb);
+        classmate.setDsc(desc);
+        return classmateMapper.updateByPrimaryKeySelective(classmate);
+    }
+
 }

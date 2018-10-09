@@ -23,4 +23,5 @@ public class CommentService {
     public List<Comment> findCommentByPage(Long pageId){
        return commentMapper.selectByPage(pageId);
     }
+
 }

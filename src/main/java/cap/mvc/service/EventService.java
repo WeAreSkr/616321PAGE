@@ -5,6 +5,8 @@ import cap.mvc.model.Event;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -18,6 +20,19 @@ public class EventService {
         event.setDt(new Date().getTime());
         event.setIspass(0);
        return eventMapper.insert(event);
+    }
+
+    public int addEvent(Event event,int year,int month,int day){
+        String str = year+"-"+month+"-" +day ;
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        try {
+            event.setDt(sdf.parse(str).getTime());
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return 0;
+        }
+        event.setIspass(0);
+        return eventMapper.insert(event);
     }
 
     public ArrayList<Event> getPassEvents() {

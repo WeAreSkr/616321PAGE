@@ -50,7 +50,7 @@
 <div class="ui-mask" id="mask" onselectstart="return false"></div>
 <div class="ui-dialog" id="dialogMove" onselectstart='return false;'>
     <div class="ui-dialog-title" id="dialogDrag"  onselectstart="return false;" >
-        登录通行证
+        登录
         <a class="ui-dialog-closebutton" href="javascript:hideDialog();"></a>
     </div>
     <form class="ui-dialog-content" action="/login" method="post">

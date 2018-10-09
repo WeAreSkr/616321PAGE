@@ -35,16 +35,16 @@ function Dialog( dragId , moveId ){
     instace.mouseOffsetLeft = 0;			//	拖拽操作时，移动元素的起始 X 点
     instace.mouseOffsetTop = 0;			//	拖拽操作时，移动元素的起始 Y 点
 
-    instace.dragElement.addEventListener('mousedown',function(e){
-
-        var e = e || window.event;
-
-        dialogInstace = instace;
-        instace.mouseOffsetLeft = e.pageX - instace.moveElement.offsetLeft ;
-        instace.mouseOffsetTop  = e.pageY - instace.moveElement.offsetTop ;
-
-        // instace.moveElement.style.zIndex = zIndex ++;
-    })
+    // instace.dragElement.addEventListener('mousedown',function(e){
+    //
+    //     var e = e || window.event;
+    //
+    //     dialogInstace = instace;
+    //     instace.mouseOffsetLeft = e.pageX - instace.moveElement.offsetLeft ;
+    //     instace.mouseOffsetTop  = e.pageY - instace.moveElement.offsetTop ;
+    //
+    //     // instace.moveElement.style.zIndex = zIndex ++;
+    // })
 
     return instace;
 }
