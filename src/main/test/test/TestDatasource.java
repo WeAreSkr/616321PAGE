@@ -1,7 +1,7 @@
 package test;
 
-import cap.mvc.dao.mapper.ClassmateMapper;
-import cap.mvc.dao.mapper.PageMapper;
+import cap.mvc.dao.mapper.custom.CustomClassmateMapper;
+import cap.mvc.dao.mapper.custom.CustomPageMapper;
 import cap.mvc.model.Classmate;
 import cap.mvc.model.association.PageAs;
 import org.apache.ibatis.io.Resources;
@@ -35,7 +35,7 @@ public class TestDatasource {
     //@Test
     public  void  testClassmate() {
 
-        ClassmateMapper  oc = sqlSession.getMapper(ClassmateMapper.class);
+        CustomClassmateMapper oc = sqlSession.getMapper(CustomClassmateMapper.class);
         List<Classmate> list = oc.findAllClassmate();
         System.out.println("ClassmateMapper.findAllClassmate:"+list);
     }
@@ -43,7 +43,7 @@ public class TestDatasource {
 
     @Test
     public void textPageAs() {
-        PageMapper  pageMapper = sqlSession.getMapper(PageMapper.class);
+        CustomPageMapper pageMapper = sqlSession.getMapper(CustomPageMapper.class);
         PageAs pageAs = pageMapper.asSelectById(14L);
         System.out.println("pageMapper.asSelectById(14L):"+pageAs.toString());
     }

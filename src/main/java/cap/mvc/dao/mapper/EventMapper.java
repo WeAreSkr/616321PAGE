@@ -1,12 +1,11 @@
 package cap.mvc.dao.mapper;
 
+import cap.mvc.dao.mapper.custom.CustomEventMapper;
 import cap.mvc.model.Event;
 import org.springframework.stereotype.Repository;
-
-import java.util.ArrayList;
 @Repository
 
-public interface EventMapper {
+public interface EventMapper extends CustomEventMapper{
     int deleteByPrimaryKey(Integer code);
 
     int insert(Event record);
@@ -19,7 +18,4 @@ public interface EventMapper {
 
     int updateByPrimaryKey(Event record);
 
-    ArrayList<Event> selectPass();
-    ArrayList<Event> selectNoPass();
-    ArrayList<Event> selectNoDel();
 }

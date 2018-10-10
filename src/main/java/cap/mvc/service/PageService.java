@@ -1,6 +1,6 @@
 package cap.mvc.service;
 
-import cap.mvc.bean.PageEx;
+import cap.mvc.model.ex.PageEx;
 import cap.mvc.dao.mapper.ClassmateMapper;
 import cap.mvc.dao.mapper.PageMapper;
 import cap.mvc.model.Classmate;

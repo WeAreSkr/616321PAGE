@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cap.mvc.dao.mapper.EventMapper" >
+
+
+  <select id="selectPass" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from event
+    WHERE ispass = 1
+    ORDER  BY DT DESC
+  </select>
+
+  <select id="selectNoPass" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from event
+    WHERE ispass = 0
+    ORDER  BY DT DESC
+  </select>
+
+
+  <select id="selectNoDel" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from event
+    WHERE ispass &lt;&gt; -1
+    ORDER  BY DT DESC
+  </select>
+
+</mapper>

@@ -1,4 +1,4 @@
-package cap.mvc.bean;
+package cap.mvc.model.ex;
 
 import cap.mvc.model.Page;
 import com.alibaba.fastjson.JSON;

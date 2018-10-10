@@ -1,13 +1,12 @@
 package cap.mvc.dao.mapper;
 
+import cap.mvc.dao.mapper.custom.CustomImagesMapper;
 import cap.mvc.model.Images;
 import org.springframework.stereotype.Repository;
 
-import java.util.List;
-
 @Repository
 
-public interface ImagesMapper {
+public interface ImagesMapper extends CustomImagesMapper {
     int deleteByPrimaryKey(Integer id);
 
     int insert(Images record);
@@ -20,5 +19,4 @@ public interface ImagesMapper {
 
     int updateByPrimaryKey(Images record);
 
-    List<Images> findAll();
 }

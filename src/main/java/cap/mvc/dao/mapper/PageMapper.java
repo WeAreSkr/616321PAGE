@@ -1,12 +1,11 @@
 package cap.mvc.dao.mapper;
 
+import cap.mvc.dao.mapper.custom.CustomPageMapper;
 import cap.mvc.model.Page;
-import cap.mvc.model.association.PageAs;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface PageMapper {
+public interface PageMapper extends CustomPageMapper {
     int deleteByPrimaryKey(Long pageId);
 
     int insert(Page record);
@@ -19,6 +18,4 @@ public interface PageMapper {
 
     int updateByPrimaryKey(Page record);
 
-
-    PageAs asSelectById(@Param("pageId") Long pageId);
 }

@@ -2,7 +2,7 @@ package cap.mvc.controller;
 
 import cap.LocalConfig;
 import cap.mvc.bean.Msg;
-import cap.mvc.bean.PageEx;
+import cap.mvc.model.ex.PageEx;
 import cap.mvc.model.Classmate;
 import cap.mvc.service.CommentService;
 import cap.mvc.service.PageService;

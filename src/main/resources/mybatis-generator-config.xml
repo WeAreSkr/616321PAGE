@@ -3,7 +3,9 @@
         "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
 <generatorConfiguration>
-
+<!--
+ 使用命令： mybatis-generator:generate -e
+-->
     <!-- !!!! Driver Class Path(指定MySQL驱动的路径) -->
     <classPathEntry
             location="D:\MAVEN\mysql\mysql-connector-java\5.1.25\mysql-connector-java-5.1.25.jar"/>
@@ -16,7 +18,7 @@
 
         <!-- !!!! Database Configurations （数据库配置） -->
         <jdbcConnection driverClass="com.mysql.jdbc.Driver"
-                        connectionURL="jdbc:mysql://localhost:3306/page616321?useUnicode=true;characterEncoding=UTF-8"
+                        connectionURL="jdbc:mysql://120.79.181.39:3306/page616321?characterEncoding=utf-8"
                         userId="guest" password="123456"/>
 
         <javaTypeResolver>
@@ -24,50 +26,24 @@
         </javaTypeResolver>
 
         <!-- !!!! Model Configurations （model生成配置，targetPackage指定生成的包路径，targetProject指定工程的位置） -->
-        <javaModelGenerator targetPackage="cap.model" targetProject="./src/main/java">
+        <javaModelGenerator targetPackage="cap.mvc.model" targetProject="./src/main/java">
             <property name="enableSubPackages" value="false"/>
             <property name="trimStrings" value="true"/>
         </javaModelGenerator>
 
         <!-- !!!! Mapper XML Configurations （XML映射文件生成的位置） -->
-        <sqlMapGenerator targetPackage="cap.mapper" targetProject="./src/main/resources">
+        <sqlMapGenerator targetPackage="tmp.mapper" targetProject="./src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
         <!-- !!!! Mapper Interface Configurations（Mapper接口生成的位置） -->
-        <javaClientGenerator targetPackage="cap.mapper" targetProject="./src/main/java"
+        <javaClientGenerator targetPackage="cap.mvc.dao.mapper" targetProject="./src/main/java"
                              type="XMLMAPPER">
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
         <!-- !!!! Table Configurations !!!!（数据库表的配置） -->
-        <table tableName="admin" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="article" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="blog_info" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="category" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="comment" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="counter" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="profile" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="sys_category" enableCountByExample="false" enableDeleteByExample="false"
-               enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="user" enableCountByExample="false" enableDeleteByExample="false" enableSelectByExample="false"
-               enableUpdateByExample="false"/>
-        <table tableName="ucomment" enableCountByExample="false" enableDeleteByExample="false"
+        <table tableName="classmate" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false"
                enableUpdateByExample="false"/>
     </context>

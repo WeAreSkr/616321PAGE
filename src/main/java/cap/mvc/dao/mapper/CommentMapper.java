@@ -1,13 +1,11 @@
 package cap.mvc.dao.mapper;
 
+import cap.mvc.dao.mapper.custom.CustomCommentMapper;
 import cap.mvc.model.Comment;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
-
-import java.util.List;
 @Repository
 
-public interface CommentMapper {
+public interface CommentMapper extends CustomCommentMapper{
     int deleteByPrimaryKey(Long commId);
 
     int insert(Comment record);
@@ -20,4 +18,4 @@ public interface CommentMapper {
 
     int updateByPrimaryKey(Comment record);
 
-    List<Comment> selectByPage(@Param("pageId") Long pageId);}
+}

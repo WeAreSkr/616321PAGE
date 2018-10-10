@@ -21,30 +21,8 @@
     where CODE = #{code,jdbcType=INTEGER}
   </select>
 
-  <select id="selectPass" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from event
-    WHERE ispass = 1
-    ORDER  BY DT DESC
-  </select>
-
-  <select id="selectNoPass" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from event
-    WHERE ispass = 0
-    ORDER  BY DT DESC
-  </select>
 
 
-  <select id="selectNoDel" resultMap="BaseResultMap">
-    select
-    <include refid="Base_Column_List" />
-    from event
-    WHERE ispass &lt;&gt; -1
-    ORDER  BY DT DESC
-  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from event
     where CODE = #{code,jdbcType=INTEGER}
