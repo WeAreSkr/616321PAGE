@@ -48,4 +48,15 @@ public class Comment {
     public void setMsg(String msg) {
         this.msg = msg;
     }
+
+    @Override
+    public String toString() {
+        return "Comment{" +
+                "commId=" + commId +
+                ", stuNmb=" + stuNmb +
+                ", pageId=" + pageId +
+                ", msg='" + msg + '\'' +
+                ", classmate=" + classmate +
+                '}';
+    }
 }

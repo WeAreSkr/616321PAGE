@@ -7,9 +7,54 @@
     <result column="DSC" property="dsc" jdbcType="VARCHAR" />
     <result column="BIRTHDAY" property="birthday" jdbcType="BIGINT" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    PAGE_ID, MODEl, DSC, BIRTHDAY
+
+  <!-- 带关系的map -->
+  <resultMap id="AsResultMap" type="cap.mvc.model.association.PageAs" >
+    <id column="PAGE_ID" property="pageId" jdbcType="BIGINT" />
+    <result column="MODEl" property="model" jdbcType="INTEGER" />
+    <result column="DSC" property="dsc" jdbcType="VARCHAR" />
+    <result column="BIRTHDAY" property="birthday" jdbcType="BIGINT" />
+
+    <association property="classmate" javaType="cap.mvc.model.Classmate">
+      <id column="classmate_STU_NMB" property="stuNmb" jdbcType="DECIMAL" />
+      <result column="classmate_PAGE_ID" property="pageId" jdbcType="BIGINT" />
+      <result column="NAME" property="name" jdbcType="VARCHAR" />
+      <result column="NICKNAME" property="nickname" jdbcType="VARCHAR" />
+      <result column="PWD" property="pwd" jdbcType="VARCHAR" />
+      <result column="DSC_class" property="dsc" jdbcType="VARCHAR" />
+      <result column="AUTHORITY" property="authority" jdbcType="INTEGER" />
+      <result column="HEAD_IMG" property="headImg" jdbcType="VARCHAR" />
+    </association>
+
+    <collection  property="commentList" ofType="cap.mvc.model.Comment">
+      <id column="COMM_ID" property="commId" jdbcType="BIGINT" />
+      <result column="comm_STU_NMB" property="stuNmb" jdbcType="DECIMAL" />
+      <result column="comm_PAGE_ID" property="pageId" jdbcType="BIGINT" />
+      <result column="MSG" property="msg" jdbcType="VARCHAR" />
+    </collection >
+  </resultMap>
+
+  <sql id="Base_Column_List_Classmate" >
+    classmate.STU_NMB as classmate_STU_NMB, classmate.PAGE_ID as classmate_PAGE_ID, NAME, NICKNAME, PWD, classmate.DSC as DSC_class, AUTHORITY, HEAD_IMG
   </sql>
+
+  <sql id="Base_Column_List_Comment" >
+    COMM_ID, comments.STU_NMB as comm_STU_NMB, comments.PAGE_ID as comm_PAGE_ID, MSG
+  </sql>
+
+  <sql id="Base_Column_List" >
+    page.PAGE_ID, MODEl, page.DSC, BIRTHDAY
+  </sql>
+
+  <select id="asSelectById" resultMap="AsResultMap" parameterType="java.lang.Long" >
+    select
+    <include refid="Base_Column_List" />,<include refid="Base_Column_List_Classmate"/>,<include refid="Base_Column_List_Comment"/>
+    FROM page
+    NATURAL JOIN comments
+    LEFT JOIN classmate on page.PAGE_ID = classmate.PAGE_ID
+    where page.PAGE_ID =#{pageId,jdbcType=BIGINT};
+  </select>
+
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
     <include refid="Base_Column_List" />

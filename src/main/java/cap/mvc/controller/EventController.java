@@ -87,8 +87,6 @@ public class EventController {
         return "addevent";
     }
 
-
-
     /**
      * 班级志
      * @return
