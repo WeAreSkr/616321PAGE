@@ -1,7 +1,7 @@
 package cap.mvc.model.association;
 
 import cap.mvc.model.Classmate;
-import cap.mvc.model.Comment;
+import cap.mvc.model.Comments;
 import cap.mvc.model.Page;
 
 import java.util.List;
@@ -11,7 +11,7 @@ import java.util.List;
  * **/
 public class PageAs extends Page{
     private Classmate classmate;
-    private List<Comment> commentList;
+    private List<Comments> commentList;
 
     public Classmate getClassmate() {
         return classmate;
@@ -21,11 +21,11 @@ public class PageAs extends Page{
         this.classmate = classmate;
     }
 
-    public List<Comment> getCommentList() {
+    public List<Comments> getCommentList() {
         return commentList;
     }
 
-    public void setCommentList(List<Comment> commentList) {
+    public void setCommentList(List<Comments> commentList) {
         this.commentList = commentList;
     }
 

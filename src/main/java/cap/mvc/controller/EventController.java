@@ -4,13 +4,13 @@ import cap.LocalConfig;
 import cap.mvc.bean.Msg;
 import cap.mvc.model.Classmate;
 import cap.mvc.model.Event;
+import cap.mvc.model.ex.EventEx;
 import cap.mvc.service.EventService;
 import cap.util.FileName;
 import com.alibaba.fastjson.JSONObject;
 import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,7 +20,6 @@ import org.springframework.web.servlet.ModelAndView;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.validation.Valid;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -29,18 +28,16 @@ import java.util.List;
 @Controller
 @RequestMapping("/")
 public class EventController {
+
     @Resource
     public EventService eventService;
 
-    @RequestMapping(value = "/authority/0/addevent",method = RequestMethod.POST,produces = "text/html;charset=UTF-8")
-    public ModelAndView addEvent(@Valid Event event, BindingResult result,
-                                 @RequestParam("year") int year,
-                                 @RequestParam("month") int month,
-                                 @RequestParam("day") int day ,
+    @RequestMapping(value = "/authority/0/addevent",method = RequestMethod.POST)
+    public ModelAndView addEvent(Event event,
+                                 @RequestParam("year") Integer year,
+                                 @RequestParam("month") Integer month,
+                                 @RequestParam("day") Integer day ,
                                  @RequestParam(value = "imgs", required = false) MultipartFile[] files) {
-        if(result.hasErrors()) {
-            return new ModelAndView("addevent");
-        }
 
         ModelAndView modelAndView = new ModelAndView("result");
         Msg msg = new Msg("上传文件",0,"");
@@ -94,14 +91,14 @@ public class EventController {
     @RequestMapping(value = "/tree", method = RequestMethod.GET)
     public ModelAndView tree(){
         ModelAndView modelAndView = new ModelAndView("tree");
-        List<Event> eventList = eventService.getPassEvents();
+        List<EventEx> eventList = eventService.getPassEvents();
         modelAndView.addObject("events",eventList);
         return  modelAndView;
     }
 
     @RequestMapping(value = "/authority/1/pass",method = RequestMethod.GET)
     public String authorizePass(Model model) {
-        List<Event> eventList = eventService.getAllEvents();
+        List<EventEx> eventList = eventService.getAllEvents();
         model.addAttribute("nopassevents",eventList);
         return "authority/1/pass";
     }
@@ -124,7 +121,7 @@ public class EventController {
         JSONObject object = (JSONObject) JSONObject.parse(json);
         int count = 0 ;
         Msg msg = new Msg();
-        List<Event> eventList = eventService.getAllEvents();
+        List<EventEx> eventList = eventService.getAllEvents();
         List<Event> listBk = new ArrayList<>();
 
         for(Event event: eventList) {

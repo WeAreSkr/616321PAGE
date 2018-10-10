@@ -1,6 +1,6 @@
 package cap.mvc.dao.mapper.custom;
 
-import cap.mvc.model.Event;
+import cap.mvc.model.ex.EventEx;
 import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 public interface CustomEventMapper{
 
-    ArrayList<Event> selectPass();
-    ArrayList<Event> selectNoPass();
-    ArrayList<Event> selectNoDel();
+    ArrayList<EventEx> selectPass();
+    ArrayList<EventEx> selectNoPass();
+    ArrayList<EventEx> selectNoDel();
 }

@@ -25,7 +25,10 @@ public class PageEx extends Page {
     }
 
     public Page toPage() {
-        Page page = new Page(this);
+        Page page = new Page();
+        page.setBirthday(this.getBirthday());
+        page.setModel(this.getModel());
+        page.setPageId(this.getPageId());
         page.setDsc(JSON.toJSONString(this));
         return  page;
     }

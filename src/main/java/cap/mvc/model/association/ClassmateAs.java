@@ -1,4 +1,6 @@
 package cap.mvc.model.association;
 
-public class ClassmateAs {
+import cap.mvc.model.Classmate;
+
+public class ClassmateAs extends Classmate {
 }

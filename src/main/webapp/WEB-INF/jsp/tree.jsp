@@ -14,7 +14,7 @@
             <div class="timeline__item timeline__item--${statu.index}">
                 <div class="timeline__item__station"></div>
                 <div class="timeline__item__content">
-                    <h2 class="timeline__item__content__date">${event.formatDt}</h2>
+                    <h2 class="timeline__item__content__date">${event.dt}</h2>
                     <br/>
 
                         <c:forEach items="${event.divPath}" var="path" >

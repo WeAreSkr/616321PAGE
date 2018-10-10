@@ -2,6 +2,7 @@ package cap.mvc.service;
 
 import cap.mvc.dao.mapper.EventMapper;
 import cap.mvc.model.Event;
+import cap.mvc.model.ex.EventEx;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -35,13 +36,15 @@ public class EventService {
         return eventMapper.insert(event);
     }
 
-    public ArrayList<Event> getPassEvents() {
+    public ArrayList<EventEx> getPassEvents() {
         return eventMapper.selectPass();
     }
-    public ArrayList<Event> getNoPassEvents() {
+
+    public ArrayList<EventEx> getNoPassEvents() {
         return eventMapper.selectNoPass();
     }
-    public ArrayList<Event> getAllEvents() {
+
+    public ArrayList<EventEx> getAllEvents() {
         return eventMapper.selectNoDel();
     }
 

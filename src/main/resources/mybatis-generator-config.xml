@@ -32,7 +32,7 @@
         </javaModelGenerator>
 
         <!-- !!!! Mapper XML Configurations （XML映射文件生成的位置） -->
-        <sqlMapGenerator targetPackage="tmp.mapper" targetProject="./src/main/resources">
+        <sqlMapGenerator targetPackage="mapper" targetProject="./src/main/resources">
             <property name="enableSubPackages" value="false"/>
         </sqlMapGenerator>
 
@@ -42,9 +42,30 @@
             <property name="enableSubPackages" value="false"/>
         </javaClientGenerator>
 
-        <!-- !!!! Table Configurations !!!!（数据库表的配置） -->
         <table tableName="classmate" enableCountByExample="false" enableDeleteByExample="false"
                enableSelectByExample="false"
-               enableUpdateByExample="false"/>
+               enableUpdateByExample="false">
+            <property name="rootInterface" value="cap.mvc.dao.mapper.custom.CustomClassmateMapper"/>
+        </table>
+        <table tableName="comments" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <property name="rootInterface" value="cap.mvc.dao.mapper.custom.CustomCommentMapper"/>
+        </table>
+        <table tableName="page" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <property name="rootInterface" value="cap.mvc.dao.mapper.custom.CustomPageMapper"/>
+        </table>
+        <table tableName="images" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <property name="rootInterface" value="cap.mvc.dao.mapper.custom.CustomImagesMapper"/>
+        </table>
+        <table tableName="event" enableCountByExample="false" enableDeleteByExample="false"
+               enableSelectByExample="false"
+               enableUpdateByExample="false">
+            <property name="rootInterface" value="cap.mvc.dao.mapper.custom.CustomEventMapper"/>
+        </table>
     </context>
 </generatorConfiguration>

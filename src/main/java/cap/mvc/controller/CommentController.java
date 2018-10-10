@@ -1,6 +1,6 @@
 package cap.mvc.controller;
 
-import cap.mvc.model.Comment;
+import cap.mvc.model.Comments;
 import cap.mvc.service.CommentService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,7 +20,7 @@ public class CommentController {
     CommentService commentService;
 
     @RequestMapping(value = "/authority/0/addcomment",method = RequestMethod.POST)
-    public void addComment(HttpServletRequest request, HttpServletResponse response, Comment comment, @RequestParam("tmpStuNmb") Integer tmpStuNmb) {
+    public void addComment(HttpServletRequest request, HttpServletResponse response, Comments comment, @RequestParam("tmpStuNmb") Integer tmpStuNmb) {
         System.out.println(comment.getMsg());
         commentService.addComment(comment);
         try {

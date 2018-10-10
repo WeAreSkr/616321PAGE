@@ -16,10 +16,17 @@
         </environment>
     </environments>
     <mappers>
+
         <mapper resource="mapper/ClassmateMapper.xml"/>
-        <mapper resource="mapper/CommentMapper.xml"/>
+        <mapper resource="mapper/CommentsMapper.xml"/>
         <mapper resource="mapper/EventMapper.xml"/>
         <mapper resource="mapper/ImagesMapper.xml"/>
         <mapper resource="mapper/PageMapper.xml"/>
+        <mapper resource="mapper/custom/ClassmateMapper.xml"/>
+        <mapper resource="mapper/custom/CommentMapper.xml"/>
+        <mapper resource="mapper/custom/EventMapper.xml"/>
+        <mapper resource="mapper/custom/ImagesMapper.xml"/>
+        <mapper resource="mapper/custom/PageMapper.xml"/>
+
     </mappers>
 </configuration>

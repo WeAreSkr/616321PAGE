@@ -20,7 +20,7 @@
       <result column="HEAD_IMG" property="headImg" jdbcType="VARCHAR" />
     </association>
 
-    <collection  property="commentList" ofType="cap.mvc.model.Comment">
+    <collection  property="commentList" ofType="cap.mvc.model.Comments">
       <id column="COMM_ID" property="commId" jdbcType="BIGINT" />
       <result column="comm_STU_NMB" property="stuNmb" jdbcType="DECIMAL" />
       <result column="comm_PAGE_ID" property="pageId" jdbcType="BIGINT" />
@@ -35,10 +35,13 @@
   <sql id="Base_Column_List_Comment" >
     COMM_ID, comments.STU_NMB as comm_STU_NMB, comments.PAGE_ID as comm_PAGE_ID, MSG
   </sql>
+  <sql id="Trim_Base_Column_List" >
+    page.PAGE_ID, MODEl, page.DSC, BIRTHDAY
+  </sql>
 
   <select id="asSelectById" resultMap="AsResultMap" parameterType="java.lang.Long" >
     select
-    <include refid="Base_Column_List" />,<include refid="Base_Column_List_Classmate"/>,<include refid="Base_Column_List_Comment"/>
+    <include refid="Trim_Base_Column_List" />,<include refid="Base_Column_List_Classmate"/>,<include refid="Base_Column_List_Comment"/>
     FROM page
     NATURAL JOIN comments
     LEFT JOIN classmate on page.PAGE_ID = classmate.PAGE_ID

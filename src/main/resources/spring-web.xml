@@ -16,11 +16,23 @@
 	<mvc:resources location="/image/" mapping="/image/**"/>
 	<mvc:resources location="/editor.md/" mapping="/editor.md/**"/>
 
+	<mvc:interceptors>
+		<mvc:interceptor>
+			<mvc:mapping path="/authority/0/*"/>
+			<bean class="cap.interceptor.LoginInterceptor"></bean>
+		</mvc:interceptor>
+		<mvc:interceptor>
+			<mvc:mapping path="/authority/1/*"/>
+			<bean class="cap.interceptor.AuthorityInterceptor"></bean>
+		</mvc:interceptor>
+	</mvc:interceptors>
+
 	<context:component-scan base-package="cap.mvc.controller"/>
 	<context:component-scan base-package="cap.mvc.controller.util"/>
 	<context:component-scan base-package="cap.mvc.service"/>
 	<context:component-scan base-package="cap.mvc.dao.mapper"/>
-
+	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+	</bean>
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 		<property name="prefix" value="/WEB-INF/jsp/"/>
 		<property name="suffix" value=".jsp"/>
