@@ -1,4 +1,4 @@
-package cap.mvc.controller.util;
+package cap.mvc.controller.resource;
 
 import cap.LocalConfig;
 import org.springframework.stereotype.Controller;
@@ -15,9 +15,9 @@ import java.io.OutputStream;
  * 图片资源
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/img")
 public class Img {
-    @RequestMapping("img/{dirimg}/{img:.+}")
+    @RequestMapping("/{dirimg}/{img:.+}")
     public void imgs(@PathVariable("dirimg") String imgpath,@PathVariable(value = "img") String iconUrl, HttpServletResponse response) {
         String filePath = null;
         if(imgpath.equals("imgs")) {

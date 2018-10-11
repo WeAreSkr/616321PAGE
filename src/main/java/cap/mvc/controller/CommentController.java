@@ -21,7 +21,6 @@ public class CommentController {
 
     @RequestMapping(value = "/authority/0/addcomment",method = RequestMethod.POST)
     public void addComment(HttpServletRequest request, HttpServletResponse response, Comments comment, @RequestParam("tmpStuNmb") Integer tmpStuNmb) {
-        System.out.println(comment.getMsg());
         commentService.addComment(comment);
         try {
             response.sendRedirect("/page?stunmb="+tmpStuNmb);

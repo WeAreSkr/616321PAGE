@@ -28,7 +28,7 @@
 	</mvc:interceptors>
 
 	<context:component-scan base-package="cap.mvc.controller"/>
-	<context:component-scan base-package="cap.mvc.controller.util"/>
+	<context:component-scan base-package="cap.mvc.controller.resource"/>
 	<context:component-scan base-package="cap.mvc.service"/>
 	<context:component-scan base-package="cap.mvc.dao.mapper"/>
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">

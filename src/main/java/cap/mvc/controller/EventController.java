@@ -4,7 +4,7 @@ import cap.LocalConfig;
 import cap.mvc.bean.Msg;
 import cap.mvc.model.Classmate;
 import cap.mvc.model.Event;
-import cap.mvc.model.ex.EventEx;
+import cap.mvc.model.wrapper.EventWrapper;
 import cap.mvc.service.EventService;
 import cap.util.FileName;
 import com.alibaba.fastjson.JSONObject;
@@ -91,19 +91,25 @@ public class EventController {
     @RequestMapping(value = "/tree", method = RequestMethod.GET)
     public ModelAndView tree(){
         ModelAndView modelAndView = new ModelAndView("tree");
-        List<EventEx> eventList = eventService.getPassEvents();
+        List<EventWrapper> eventList = eventService.getPassEvents();
         modelAndView.addObject("events",eventList);
         return  modelAndView;
     }
 
     @RequestMapping(value = "/authority/1/pass",method = RequestMethod.GET)
     public String authorizePass(Model model) {
-        List<EventEx> eventList = eventService.getAllEvents();
+        List<EventWrapper> eventList = eventService.getAllEvents();
         model.addAttribute("nopassevents",eventList);
         return "authority/1/pass";
     }
 
-
+    /**
+     * 这里处理得有些牵强
+     *  d 类似于这样的数组   ["'code1':'0' , 'code2':'1' .......]
+     *  然后用 toj 包装成json格式，再解析。
+     * @param d
+     * @return
+     */
     private String toj(String[] d) {
         String json = "{";
         for(int i =0; i< d.length -1;i++){
@@ -111,20 +117,17 @@ public class EventController {
         }
         json += (d[d.length-1]+"}");
         return  json;
-
     }
-
-
     @RequestMapping(value = "/authority/1/pass",method = RequestMethod.POST)
     public String authorizePass(Model model,@RequestParam(value = "code",required = false) String[] d) {
         String json = toj(d);
         JSONObject object = (JSONObject) JSONObject.parse(json);
         int count = 0 ;
         Msg msg = new Msg();
-        List<EventEx> eventList = eventService.getAllEvents();
+        List<EventWrapper> eventList = eventService.getAllEvents();
         List<Event> listBk = new ArrayList<>();
 
-        for(Event event: eventList) {
+        for(EventWrapper event: eventList) {
             int ispass = Integer.parseInt((String) object.get("code"+event.getCode()));
             if(ispass != event.getCode()){
                 Event ebk = new Event();
