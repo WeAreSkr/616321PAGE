@@ -10,7 +10,7 @@ public class EventWrapper extends Event{
 
     public String getFormatDt() {
 
-        SimpleDateFormat formator = new SimpleDateFormat("yyyy年mm月dd日");
+        SimpleDateFormat formator = new SimpleDateFormat("yyyy年MM月dd日");
 
 
         return  formator.format(new Date(getDt()));
