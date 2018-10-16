@@ -1,4 +1,4 @@
-package test;
+package junit;
 
 import cap.mvc.dao.mapper.ClassmateMapper;
 import cap.mvc.dao.mapper.PageMapper;

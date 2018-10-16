@@ -1,4 +1,4 @@
-package test;
+package junit;
 
 import cap.util.SavaHtml;
 import org.junit.jupiter.api.Test;
