@@ -67,7 +67,12 @@
         </div>
         <div class="ui-dialog-l40">
             <a href="/register">立即注册</a>
-            <a href="#">忘记密码</a>
+            <a href="#" onclick="onForget()">忘记密码</a>
+            <script>
+                function onForget() {
+                    window.alert("忘记密码？ 我也没办法。");
+                }
+            </script>
         </div>
     </form>
 </div>

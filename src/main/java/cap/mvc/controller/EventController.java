@@ -67,7 +67,8 @@ public class EventController {
             }
         }
 
-        msg.setMsg("上传图片："+count+"张");
+        msg.setMsg("上传成功，请等待班长审核通过\n" +
+                "上传图片："+count+"张");
         event.setImgagesPath(FileName.mgStr(fileNames));
         eventService.addEvent(event,year,month,day);
         modelAndView.addObject("msg",msg);

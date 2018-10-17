@@ -1,5 +1,6 @@
 package cap.interceptor;
 
+import cap.mvc.bean.Msg;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -16,7 +17,12 @@ public class LoginInterceptor implements HandlerInterceptor {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
         HttpSession session = request.getSession();
         if(session.getAttribute("user") == null){
-            response.sendRedirect("/tree");
+            Msg msg = new Msg();
+            msg.setRedirect("/tree");
+            msg.setTitle("登录");
+            msg.setMsg("请你登录过后才能留言");
+            request.setAttribute("msg",msg);
+            request.getRequestDispatcher("/result.jsp").forward(request,response);
             return false;
         }
         return true;

@@ -3,7 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Addevent</title>
+    <title>添加班级志</title>
     <style>
         .error {
             color: #ff0000;
@@ -41,11 +41,18 @@
             line-height: 32px;
             border-bottom: inset green 2px;
         }
+
+        .center__ {
+            width: 100%;
+            left: 50%;
+            margin-left: 25%;
+        }
     </style>
     <jsp:include page="head.jsp"></jsp:include>
 </head>
 <body>
 <jsp:include page="navigation.jsp"></jsp:include>
+<div class="center__">
 <s:form action="addevent" method="post" modelAttribute="event" enctype="multipart/form-data">
 <div class="map_item">
     <label class="name">
@@ -55,7 +62,7 @@
     <div class="map_item">
         <label class="name">
             内容:</label>
-            <s:textarea  path="content" cols="20" rows="10"/><s:errors path="content" cssClass="error"></s:errors>
+            <s:textarea  path="content" cols="22" rows="10"/><s:errors path="content" cssClass="error"></s:errors>
     </div>
     <div class="map_item">
         <label class="name">编辑：</label>
@@ -67,30 +74,30 @@
 
                 </div>
 
-                <input type="submit" value="提交"/>
+    <div class="map_item">
+        <label class="name">事件日期:</label>
+
+            <select name="year" id="sel1">
+                <option value="year">年</option>
+            </select>
+            <select name="month" id="sel2">
+                <option value="month">月</option>
+            </select>
+            <select name="day" id="sel3">
+                <option value="day">日</option>
+            </select>
+            <span id="result"></span>
 
 
-    <table>
-        <tr><td align="right">事件日期:  </td><td>
 
-            <div id="box">
-                <select name="year" id="sel1">
-                    <option value="year">年</option>
-                </select>
-                <select name="month" id="sel2">
-                    <option value="month">月</option>
-                </select>
-                <select name="day" id="sel3">
-                    <option value="day">日</option>
-                </select>
-                <span id="result"></span>
-            </div></td></tr>
-    </table>
+
     <script src="/js/dateselector.js"></script>
+<div> <input style="background-color: #00FF00" type="submit" value="提交"/></div>
 
 
 </s:form>
-<button onclick="addimgs()">添加图片</button>
+</div>
+<a href="#" onclick="addimgs()">添加图片</a>
 <script>
     function  addimgs() {
         var imgselect = $("#imgselect");
