@@ -2,6 +2,9 @@
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--
+    这个文件是测试数据库所用
+ -->
 <configuration>
     <properties resource="jdbc.properties"></properties>
     <environments default="development">
