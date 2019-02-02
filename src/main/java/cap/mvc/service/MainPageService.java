@@ -44,7 +44,6 @@ public class MainPageService {
         }
         else    //不同年
         {
-            System.out.println("判断day2 - day1 : " + (day2-day1));
             return day2-day1;
         }
     }
@@ -63,7 +62,6 @@ public class MainPageService {
         } catch (ParseException e) {
             e.printStackTrace();
             return "**";
-
         }
     }
 

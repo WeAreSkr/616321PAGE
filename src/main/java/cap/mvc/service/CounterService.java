@@ -21,20 +21,29 @@ public class CounterService {
         if(tCount == -1) {
             return countDao.getCount()+"";
         }
+        System.out.println("get tcount:"+tCount);
        return tCount+"";
     }
 
     public void increase() {
+
         synchronized (tCount) {
             if(tCount == -1) {
                 tCount = countDao.getCount();
             }
-
             tCount ++;
-            if(tCount % 5 == 0) {
+            System.out.println("increase tcount:"+tCount);
+            if(tCount > 0) {
                 countDao.setCount(tCount);
             }
         }
     }
 
+    public CountDao getCountDao() {
+        return countDao;
+    }
+
+    public void setCountDao(CountDao countDao) {
+        this.countDao = countDao;
+    }
 }

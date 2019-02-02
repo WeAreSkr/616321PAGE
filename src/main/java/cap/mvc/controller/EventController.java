@@ -2,6 +2,7 @@ package cap.mvc.controller;
 
 import cap.LocalConfig;
 import cap.mvc.bean.Msg;
+import cap.mvc.dao.mapper.CommentsMapper;
 import cap.mvc.model.Classmate;
 import cap.mvc.model.Event;
 import cap.mvc.model.wrapper.EventWrapper;
