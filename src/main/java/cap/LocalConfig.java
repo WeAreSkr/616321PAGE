@@ -14,6 +14,7 @@ public class LocalConfig {
 
     private static String PATH_PAGE = null;
 
+    private static String PATH_COUNT = "count.bin";
 
 /**
  *
@@ -79,7 +80,13 @@ public class LocalConfig {
         return PATH_IMGROOT+PATH_IMGSEVENT;
     }
 
-
+    /**
+     * 暂时放在imgroot目录下吧
+     * @return
+     */
+    public static String getCountfile() {
+        return PATH_IMGROOT+PATH_COUNT;
+    }
 
     /***-------------------------***/
     public static String getPathPage() {

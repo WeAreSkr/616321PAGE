@@ -46,6 +46,12 @@
   <listener>
     <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>
   </listener>
+
+
+  <listener>
+    <listener-class>cap.listener.Counter</listener-class>
+  </listener>
+
   <servlet>
     <servlet-name>springmvc</servlet-name>
     <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
@@ -56,6 +62,7 @@
 
     <load-on-startup>1</load-on-startup>
   </servlet>
+
 
   <servlet-mapping>
     <servlet-name>springmvc</servlet-name>

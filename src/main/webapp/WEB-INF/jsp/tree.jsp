@@ -50,8 +50,67 @@
     for (i = 0; i < ${events.size()}; i++) {
         customWayPoint('.timeline__item--' + i, 'timeline__item-bg', defaultOffset);
     }
-</script>
 
+</script>
+<style type="text/css">
+    .dialog p{
+        display:block;
+        height: 10px;
+        padding: 10px;
+        border: slateblue 1px solid;
+    }
+    .dialog {
+        margin-top: -200px;
+        margin-left: -400px;
+        background: slateblue;
+        width: 400px;
+        height: 200px;
+        position: fixed;
+        top: 100%;
+        left: 100%;
+    //    visibility: hidden;
+    }
+    .dialog .close{
+        margin-top: -10px;
+        display: inline-block;
+        float: right;
+        background: crimson;
+
+    }
+    .dialog .tvdate{
+        height: 10px;
+        float: right;
+    }
+    .dialog * {
+        margin: 0px;
+    }
+    .dialog p{
+        height: 20px;
+    }
+    .dialog .tvDayTxt{
+        height: 100px;
+    }
+
+</style>
+<script type="text/javascript">
+    window.onload= function () {
+
+        document.getElementById("tvdate").innerHTML=Date().substr(3,12);
+    }
+    function closeClick() {
+        var dialog = document.getElementById("dialog");
+        dialog.style.visibility = "hidden";
+    }
+</script>
+<div id="dialog" class="dialog">
+    <p style="margin-top: 0px; background: olivedrab ;height: 10px"><span style="float:left;adisplay:inline-block;margin-top: -10px">每日一句</span><a class="close" onclick="closeClick()">X</a></p>
+    <p class="tvDayTxt">
+        ${daysentence}
+    </p>
+    <p style="height: 10px; color: green">距离四川专升本考试还剩: <span style="color: red;font-size: 20px">${daycount}</span> 天</p>
+    <p id="tvdate" class="tvdate"></p>
+    <p>访问量:${count}</p>
+</div>
 </body>
 </html>
 

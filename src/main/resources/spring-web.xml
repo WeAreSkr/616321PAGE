@@ -31,6 +31,8 @@
 	<context:component-scan base-package="cap.mvc.controller.resource"/>
 	<context:component-scan base-package="cap.mvc.service"/>
 	<context:component-scan base-package="cap.mvc.dao.mapper"/>
+	<context:component-scan base-package="cap.mvc.dao"/>
+
 	<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
 	</bean>
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">

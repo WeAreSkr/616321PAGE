@@ -5,7 +5,9 @@ import cap.mvc.bean.Msg;
 import cap.mvc.model.Classmate;
 import cap.mvc.model.Event;
 import cap.mvc.model.wrapper.EventWrapper;
+import cap.mvc.service.CounterService;
 import cap.mvc.service.EventService;
+import cap.mvc.service.MainPageService;
 import cap.util.FileName;
 import com.alibaba.fastjson.JSONObject;
 import net.coobird.thumbnailator.Thumbnails;
@@ -31,7 +33,10 @@ public class EventController {
 
     @Resource
     public EventService eventService;
-
+    @Resource
+    public MainPageService mainPageService;
+    @Resource
+    public CounterService counterService;
     @RequestMapping(value = "/authority/0/addevent",method = RequestMethod.POST)
     public ModelAndView addEvent(Event event,
                                  @RequestParam("year") Integer year,
@@ -94,6 +99,9 @@ public class EventController {
         ModelAndView modelAndView = new ModelAndView("tree");
         List<EventWrapper> eventList = eventService.getPassEvents();
         modelAndView.addObject("events",eventList);
+        modelAndView.addObject("daycount",mainPageService.getDayCount());
+        modelAndView.addObject("daysentence",mainPageService.getSentence());
+        modelAndView.addObject("count",counterService.getCount());
         return  modelAndView;
     }
 
